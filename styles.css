@@ -1,0 +1,147 @@
+/** @format */
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #f0f0f0;
+}
+
+.container {
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.header-left {
+  flex: 2;
+}
+
+.header-right {
+  flex: 1;
+  text-align: right;
+}
+
+h1,
+h2 {
+  margin: 0;
+}
+
+h1 {
+  font-size: 24px;
+  color: #333;
+}
+
+h2 {
+  font-size: 20px;
+  color: #666;
+}
+
+.date-company {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.customer-info {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.main-content {
+  display: flex;
+  gap: 20px;
+}
+
+.left-section,
+.right-section {
+  flex: 1;
+}
+
+.diagram-placeholder {
+  background-color: #f0f0f0;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.dimensions,
+.collar-info,
+.height-info,
+.options {
+  margin-bottom: 20px;
+}
+
+.notes textarea {
+  width: 100%;
+  height: 100px;
+}
+
+.collar-location,
+.sections,
+.additional-info,
+.final-options,
+.totals {
+  margin-bottom: 20px;
+}
+
+h3 {
+  background-color: #ffff00;
+  padding: 5px;
+  margin: 0 0 10px 0;
+}
+
+.location-inputs,
+.section-inputs {
+  display: grid;
+  gap: 10px;
+}
+
+.checkbox-group {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+label {
+  font-weight: bold;
+  color: #333;
+}
+
+.totals {
+  display: flex;
+  justify-content: space-between;
+}
+
+.totals > div {
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    flex-direction: column;
+  }
+}

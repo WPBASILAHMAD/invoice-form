@@ -1,0 +1,199 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Collar Specifications Form</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+
+      .collar-form-container {
+        width: 500px;
+        background-color: white;
+      }
+
+      .collar-form-row {
+        display: flex;
+        border-bottom: 1px solid black;
+        min-height: 30px;
+      }
+
+      .collar-form-label {
+        width: 180px;
+        padding: 8px;
+        /* border-right: 1px solid black; */
+        font-weight: bold;
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+        background-color: #f8f9fa;
+      }
+
+      .collar-form-input {
+        flex: 1;
+        padding: 8px;
+        background-color: #ffff00;
+        outline: none;
+      }
+
+      .collar-form-input-text {
+        flex: 1;
+        font-size: 16px;
+        background-color: #ffff00;
+        width: 100%;
+        border: none;
+        outline: none;
+      }
+
+      .collar-section-header {
+        text-align: center;
+        padding: 6px;
+
+        font-weight: bold;
+        text-transform: uppercase;
+        text-decoration: underline;
+      }
+
+      .collar-location-container {
+        /* border: 2px solid black; */
+        margin: 0;
+        background-color: white;
+      }
+
+      .collar-short-long-row {
+        display: flex;
+        border-top: 1px solid black !important;
+        border: 2px solid black;
+      }
+
+      .collar-short-long-cell {
+        flex: 1;
+        border-right: 2px solid black;
+
+        padding: 6px;
+        text-align: center;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+
+      .collar-short-long-cell:first-child {
+        /* border-right: 2px solid black; */
+      }
+
+      /* Remove bottom border from last elements */
+      .collar-location-container:last-child .collar-form-row:last-child {
+        border-bottom: none;
+      }
+
+      /* Mobile responsiveness */
+      @media (max-width: 600px) {
+        .collar-form-container {
+          width: 100%;
+          margin: 10px;
+        }
+
+        .collar-form-row {
+          flex-direction: column;
+        }
+
+        .collar-form-label {
+          width: 100%;
+          border-right: none;
+          border-bottom: 1px solid black;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="collar-section" class="collar-form-container">
+      <!-- Initial Collar Details -->
+      <div class="collar-form-row">
+        <div class="collar-form-label">COLLAR SHAPE-</div>
+        <div class="collar-form-input">
+          <input class="collar-form-input-text" type="text" />
+        </div>
+      </div>
+      <div class="collar-form-row">
+        <div class="collar-form-label">COLLAR A SIZE-</div>
+        <div class="collar-form-input">
+          <input class="collar-form-input-text" type="text" />
+        </div>
+      </div>
+      <div class="collar-form-row">
+        <div class="collar-form-label">COLLAR B SIZE-</div>
+        <div class="collar-form-input">
+          <input class="collar-form-input-text" type="text" />
+        </div>
+      </div>
+
+      <!-- Collar A Location Section -->
+      <div class="collar-location-container">
+        <div class="collar-section-header">COLLAR A LOCATION</div>
+        <div class="collar-form-row">
+          <div class="collar-form-label">SIDE A1 TO COLLAR-</div>
+          <div class="collar-form-input">
+            <input class="collar-form-input-text" type="text" />
+          </div>
+        </div>
+        <div class="collar-form-row">
+          <div class="collar-form-label">SIDE A2 TO COLLAR-</div>
+          <div class="collar-form-input">
+            <input class="collar-form-input-text" type="text" />
+          </div>
+        </div>
+        <div class="collar-form-row">
+          <div class="collar-form-label">SIDE A3 TO COLLAR-</div>
+          <div class="collar-form-input">
+            <input class="collar-form-input-text" type="text" />
+          </div>
+        </div>
+        <div class="collar-form-row">
+          <div class="collar-form-label">SIDE A4 TO COLLAR-</div>
+          <div class="collar-form-input">
+            <input class="collar-form-input-text" type="text" />
+          </div>
+        </div>
+        <div class="collar-short-long-row">
+          <div class="collar-short-long-cell">SHORT-</div>
+          <input class="collar-short-long-input" type="text" />
+          <div class="collar-short-long-cell">LONG-</div>
+          <input class="collar-short-long-input" type="text" />
+        </div>
+      </div>
+
+      <!-- Collar B Location Section -->
+      <div class="collar-location-container">
+        <div class="collar-section-header">COLLAR B LOCATION</div>
+        <div class="collar-form-row">
+          <div class="collar-form-label">SIDE B1 TO COLLAR-</div>
+          <div class="collar-form-input">
+            <input class="collar-form-input-text" type="text" />
+          </div>
+        </div>
+        <div class="collar-form-row">
+          <div class="collar-form-label">SIDE B2 TO COLLAR-</div>
+          <div class="collar-form-input">
+            <input class="collar-form-input-text" type="text" />
+          </div>
+        </div>
+        <div class="collar-form-row">
+          <div class="collar-form-label">SIDE B3 TO COLLAR-</div>
+          <div class="collar-form-input">
+            <input class="collar-form-input-text" type="text" />
+          </div>
+        </div>
+        <div class="collar-form-row">
+          <div class="collar-form-label">SIDE B4 TO COLLAR-</div>
+          <div class="collar-form-input">
+            <input class="collar-form-input-text" type="text" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
