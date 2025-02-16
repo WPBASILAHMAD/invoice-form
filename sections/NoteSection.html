@@ -1,0 +1,319 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notes Form</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+
+      .form-container {
+        width: 800px;
+        border: 3px solid #ff0000;
+      }
+
+      .header {
+        background-color: #e6f3ff;
+        text-align: center;
+        padding: 8px;
+        font-weight: bold;
+        border-bottom: 3px solid black;
+      }
+
+      .yellow-row {
+        flex: 1;
+        height: 30px;
+        background-color: #ffff00;
+        border-bottom: 3px solid black;
+      }
+
+      .pink-row {
+        flex: 1;
+        height: 30px;
+        background-color: #ffe4e1;
+        border-bottom: 3px solid black;
+      }
+
+      .white-row {
+        flex: 1;
+        height: 30px;
+        border-bottom: 3px solid black;
+      }
+
+      .sections-row {
+        display: flex;
+        border-bottom: 2px solid black;
+      }
+
+      .section-label {
+        width: 200px;
+        padding: 8px;
+        text-align: center;
+        border-right: 3px solid black;
+        font-weight: bold;
+      }
+
+      .section-cell {
+        flex: 1;
+        border-right: 3px solid black;
+      }
+
+      .section-cell:last-child {
+        border-right: none;
+      }
+
+      .stock-row {
+        display: flex;
+        /* width: 100%; */
+        border-bottom: 3px solid black;
+      }
+
+      .stock-label {
+        width: 40%;
+        padding: 8px;
+        text-align: right;
+        border-right: 3px solid black;
+      }
+
+      .x-mark {
+        flex: 1;
+        width: 100px;
+        text-align: center;
+        padding: 8px;
+      }
+
+      .row {
+        display: flex;
+        border-bottom: 2px solid black;
+        height: 35px;
+      }
+
+      .row:last-child {
+        border-bottom: none;
+      }
+
+      .number-cell {
+        flex: 0.25;
+        width: 100px;
+        text-align: center;
+        border-right: 3px solid black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+      }
+
+      .total-sq-cell {
+        flex: 1;
+        padding: 8px;
+        display: flex;
+        align-items: center;
+        font-weight: bold;
+      }
+      .total-sq-cell-1 {
+        flex: 1;
+
+        padding: 8px;
+        display: flex;
+        align-items: center;
+        font-weight: bold;
+        border: none;
+      }
+
+      .solder-cell {
+        flex: 0.68;
+        width: 100px;
+        text-align: center;
+        border-right: 3px solid black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+      }
+
+      .empty-cell {
+        flex: 0.25;
+        width: 100px;
+        border-right: 3px solid black;
+      }
+
+      .total-cost-cell {
+        width: 150px;
+        border-right: 3px solid black;
+        display: flex;
+        align-items: center;
+        padding-left: 8px;
+        font-weight: bold;
+      }
+
+      .yellow-cell {
+        flex: 1;
+        background-color: #ffff00;
+      }
+
+      .form-input-text {
+        flex: 1;
+        font-size: 16px;
+        /* padding: 8px 0px 8px 0px; */
+
+        width: 100%;
+        border: none;
+        outline: none;
+        background-color: transparent;
+      }
+
+      /* .form-input {
+              flex: 1;
+            } */
+    </style>
+  </head>
+  <body>
+    <div id="note-section" class="form-container">
+      <div class="header">NOTES</div>
+      <div class="yellow-row form-input">
+        <input class="form-input-text" type="text" />
+      </div>
+      <div class="pink-row form-input">
+        <input class="form-input-text" type="text" />
+      </div>
+      <div class="pink-row form-input">
+        <input class="form-input-text" type="text" />
+      </div>
+      <div class="white-row form-input">
+        <input class="form-input-text" type="text" />
+      </div>
+
+      <div class="sections-row">
+        <div class="section-label">CHASE COVER<br />SECTIONS</div>
+        <div class="section-cell">
+          <input class="form-input-text" type="text" />
+        </div>
+        <div class="section-cell">
+          <input class="form-input-text" type="text" />
+        </div>
+      </div>
+
+      <div class="sections-row">
+        <div class="section-label">STANDING SEAMS</div>
+        <div class="section-cell">
+          <input class="form-input-text" type="text" />
+        </div>
+        <div class="section-cell">
+          <input class="form-input-text" type="text" />
+        </div>
+        <div class="section-cell">
+          <input class="form-input-text" type="text" />
+        </div>
+      </div>
+
+      <div class="stock-row">
+        <div class="stock-label">1-CHASE COVER STOCK SIZE-</div>
+        <div class="x-mark">
+          <input
+            class="form-input-text"
+            placeholder="X"
+            type="text"
+            style="text-align: center" />
+        </div>
+      </div>
+
+      <div class="stock-row">
+        <div class="stock-label">2-STANDING COLLAR A STOCK SIZE-</div>
+        <div class="x-mark">
+          <input
+            class="form-input-text"
+            placeholder="X"
+            type="text"
+            style="text-align: center" />
+        </div>
+      </div>
+
+      <div class="stock-row">
+        <div class="stock-label">2-STANDING COLLAR B STOCK SIZE-</div>
+        <div class="x-mark">
+          <input
+            class="form-input-text"
+            placeholder="X"
+            type="text"
+            style="text-align: center" />
+        </div>
+      </div>
+
+      <div class="stock-row">
+        <div class="stock-label">3-STORM COLLAR A STOCK SIZE-</div>
+        <div class="x-mark">
+          <input
+            class="form-input-text"
+            placeholder="X"
+            type="text"
+            style="text-align: center" />
+        </div>
+      </div>
+
+      <div class="stock-row">
+        <div class="stock-label">3-STORM COLLAR B STOCK SIZE-</div>
+        <div class="x-mark">
+          <input
+            class="form-input-text"
+            placeholder="X"
+            type="text"
+            style="text-align: center" />
+        </div>
+      </div>
+
+      <!-- Numbers Row -->
+      <div class="row">
+        <div class="number-cell">1</div>
+        <div class="number-cell">2</div>
+        <div class="number-cell">3</div>
+        <div class="total-sq-cell-1"></div>
+      </div>
+
+      <!-- Empty Row with Total Sq. Ft. -->
+      <div class="row">
+        <div class="empty-cell">
+          <input
+            class="form-input-text"
+            type="text"
+            style="text-align: center" />
+        </div>
+        <div class="empty-cell">
+          <input
+            class="form-input-text"
+            type="text"
+            style="text-align: center" />
+        </div>
+        <div class="empty-cell">
+          <input
+            class="form-input-text"
+            type="text"
+            style="text-align: center" />
+        </div>
+        <div class="total-sq-cell">
+          TOTAL SQ. FT.
+          <input
+            class="form-input-text"
+            type="text"
+            style="margin-left: 10px" />
+        </div>
+      </div>
+
+      <!-- Bottom Row with Solder and Total Cost -->
+      <div class="row">
+        <div class="solder-cell">SOLDER</div>
+        <div class="empty-cell">
+          <input class="form-input-text" type="text" />
+        </div>
+        <div class="total-cost-cell">TOTAL COST</div>
+        <div class="yellow-cell">
+          <input class="form-input-text" type="text" />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

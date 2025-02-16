@@ -60,7 +60,7 @@
       }
 
       .collar-location-container {
-        /* border: 2px solid black; */
+        border: 2px solid black;
         margin: 0;
         background-color: white;
       }
@@ -68,7 +68,7 @@
       .collar-short-long-row {
         display: flex;
         border-top: 1px solid black !important;
-        border: 2px solid black;
+        border: 0px solid black;
       }
 
       .collar-short-long-cell {
@@ -80,18 +80,24 @@
         font-weight: bold;
         text-transform: uppercase;
       }
-
+      /* 
       .collar-short-long-cell:first-child {
-        /* border-right: 2px solid black; */
-      }
+        border-right: 2px solid black;
+      } */
 
       /* Remove bottom border from last elements */
       .collar-location-container:last-child .collar-form-row:last-child {
         border-bottom: none;
       }
 
+      .collar-short-long-input {
+        border: none;
+        outline: none;
+        background-color: transparent;
+      }
+
       /* Mobile responsiveness */
-      @media (max-width: 600px) {
+      /* @media (max-width: 600px) {
         .collar-form-container {
           width: 100%;
           margin: 10px;
@@ -106,7 +112,7 @@
           border-right: none;
           border-bottom: 1px solid black;
         }
-      }
+      } */
     </style>
   </head>
   <body>

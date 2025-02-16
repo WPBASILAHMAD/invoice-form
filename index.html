@@ -112,6 +112,21 @@
     </style>
   </head>
   <body>
+    <nav >
+      <a href="flexbox.html" style=" text-decoration: none; padding: 14px 20px;">Flexbox</a>
+    </nav>
+    <br />
+    <br />
+    <div id="note-section"></div>
+    <script>
+      fetch("sections/NoteSection.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("note-section").innerHTML = data;
+        })
+        .catch((error) => console.error("Error loading section:", error));
+    </script>
+    <br />
     <div class="form-container">
       <div class="form-row">
         <div class="form-label" style="padding-top: 8px">DATE-</div>
@@ -235,5 +250,7 @@
         })
         .catch((error) => console.error("Error loading section:", error));
     </script>
+    
+  </body>
   </body>
 </html>

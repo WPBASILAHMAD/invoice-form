@@ -1,0 +1,58 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Two-Section Flexbox</title>
+    <style>
+      .container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        background: white;
+        border-radius: 10px;
+        transition: flex-direction 0.3s ease-in-out;
+      }
+
+      .content-section {
+        flex: 1;
+        padding-left: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      @media (min-width: 768px) {
+        .container {
+          flex-direction: row;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div id="collar-section"></div>
+      <script>
+        fetch("sections/CollarSection.html")
+          .then((response) => response.text())
+          .then((data) => {
+            document.getElementById("collar-section").innerHTML = data;
+          })
+          .catch((error) => console.error("Error loading section:", error));
+      </script>
+      <div class="content-section">
+        <div id="note-section"></div>
+        <script>
+          fetch("sections/NoteSection.html")
+            .then((response) => response.text())
+            .then((data) => {
+              document.getElementById("note-section").innerHTML = data;
+            })
+            .catch((error) => console.error("Error loading section:", error));
+        </script>
+      </div>
+    </div>
+  </body>
+</html>
