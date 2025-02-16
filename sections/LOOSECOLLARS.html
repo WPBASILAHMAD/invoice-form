@@ -1,0 +1,162 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Collars Form</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+
+      .collars-form-container {
+        width: 600px;
+        position: relative;
+      }
+
+      .collars-header-text {
+        position: absolute;
+        top: -25px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        padding-right: 80px;
+        font-weight: bold;
+      }
+
+      .collars-yes-no {
+        display: flex;
+        gap: 100px;
+      }
+
+      .collars-form-row {
+        display: flex;
+        border-bottom: 2px solid black;
+        height: 40px;
+      }
+
+      .collars-form-row:last-child {
+        border-bottom: none;
+      }
+
+      .collars-label {
+        width: 250px;
+        display: flex;
+        align-items: center;
+        padding-left: 10px;
+        font-weight: bold;
+        font-size: 16px;
+      }
+
+      .collars-input-area {
+        flex: 1;
+        background-color: #ffff00;
+        display: flex;
+        align-items: center;
+      }
+
+      .collars-checkbox-area {
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+        align-items: center;
+        padding-right: 80px;
+      }
+
+      .collars-checkbox-container {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+
+      .collars-checkbox-yes {
+        width: 20px;
+        height: 20px;
+        border: 2px solid #0000ff;
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background: white;
+        margin: 0;
+        cursor: pointer;
+      }
+
+      .collars-checkbox-no {
+        width: 20px;
+        height: 20px;
+        border: 2px solid #ff0000;
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background: white;
+        margin: 0;
+        cursor: pointer;
+      }
+
+      .collars-checkbox-yes:checked,
+      .collars-checkbox-no:checked {
+        background-color: #888;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="loose-collars-section" class="collars-form-container">
+      <div class="collars-header-text">
+        <div class="collars-yes-no">
+          <span>YES</span>
+          <span>NO</span>
+        </div>
+      </div>
+
+      <!-- Loose Collars Row -->
+      <div class="collars-form-row">
+        <div class="collars-label">LOOSE COLLARS-</div>
+        <div class="collars-input-area">
+          <div class="collars-checkbox-area">
+            <div class="collars-checkbox-container">
+              <input type="checkbox" class="collars-checkbox-yes" />
+            </div>
+            <div class="collars-checkbox-container">
+              <input type="checkbox" class="collars-checkbox-no" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Corner Bolts Row -->
+      <div class="collars-form-row">
+        <div class="collars-label">CORNER BOLTS-</div>
+        <div class="collars-input-area">
+          <div class="collars-checkbox-area">
+            <div class="collars-checkbox-container">
+              <input type="checkbox" class="collars-checkbox-yes" />
+            </div>
+            <div class="collars-checkbox-container">
+              <input type="checkbox" class="collars-checkbox-no" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hose Clamps Row -->
+      <div class="collars-form-row">
+        <div class="collars-label">HOSE CLAMPS-</div>
+        <div class="collars-input-area">
+          <div class="collars-checkbox-area">
+            <div class="collars-checkbox-container">
+              <input type="checkbox" class="collars-checkbox-yes" />
+            </div>
+            <div class="collars-checkbox-container">
+              <input type="checkbox" class="collars-checkbox-no" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

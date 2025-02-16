@@ -24,6 +24,10 @@
         justify-content: center;
       }
 
+      #collar-section {
+        margin-bottom: 1cqb;
+      }
+
       @media (min-width: 768px) {
         .container {
           flex-direction: row;
@@ -53,6 +57,19 @@
             .catch((error) => console.error("Error loading section:", error));
         </script>
       </div>
+    </div>
+    <br />
+
+    <div>
+      <div id="storm-section"></div>
+      <script>
+        fetch("sections/StormSection.html")
+          .then((response) => response.text())
+          .then((data) => {
+            document.getElementById("storm-section").innerHTML = data;
+          })
+          .catch((error) => console.error("Error loading section:", error));
+      </script>
     </div>
   </body>
 </html>

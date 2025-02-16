@@ -1,0 +1,125 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Storm Collars Form</title>
+    <style>
+      .storm-form-container {
+        width: 480px;
+      }
+
+      .storm-form-row {
+        display: flex;
+        border-bottom: 2px solid black;
+        height: 40px;
+      }
+
+      .storm-label {
+        width: 200px;
+        text-align: right;
+        align-items: center;
+        padding: 10px;
+        font-weight: bold;
+        font-size: 16px;
+      }
+
+      .storm-input-area {
+        flex: 1;
+        background-color: #ffff00;
+        display: flex;
+        align-items: center;
+      }
+
+      .storm-checkbox-area {
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+        align-items: center;
+      }
+
+      .storm-checkbox-container {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+
+      .storm-checkbox-yes {
+        width: 20px;
+        height: 20px;
+        border: 2px solid #0000ff;
+        background: white;
+        margin: 0;
+      }
+
+      .storm-checkbox-no {
+        width: 20px;
+        height: 20px;
+        border: 2px solid #ff0000;
+        background: white;
+        margin: 0;
+      }
+
+      .storm-option-text {
+        font-weight: bold;
+        font-size: 16px;
+      }
+
+      .storm-input-text {
+        flex: 1;
+        font-size: 16px;
+        padding: 8px;
+        background-color: #ffff00;
+        width: 100%;
+        border: none;
+        outline: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="storm-section" class="storm-form-container">
+      <!-- Storm Collars Row -->
+      <div class="storm-form-row">
+        <div class="storm-label">STORM COLLARS-</div>
+        <div class="storm-input-area">
+          <div class="storm-checkbox-area">
+            <div class="storm-checkbox-container">
+              <input type="checkbox" class="storm-checkbox-yes" id="yes" />
+              <label class="storm-option-text" for="yes">YES</label>
+            </div>
+            <div class="storm-checkbox-container">
+              <input type="checkbox" class="storm-checkbox-no" id="no" />
+              <label class="storm-option-text" for="no">NO</label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pipe Size A Row -->
+      <div class="storm-form-row">
+        <div class="storm-label">PIPE SIZE A-</div>
+        <div class="storm-input-area">
+          <input type="text" class="storm-input-text" />
+        </div>
+      </div>
+
+      <!-- Pipe Size B Row -->
+      <div class="storm-form-row">
+        <div class="storm-label">PIPE SIZE B-</div>
+        <div class="storm-input-area">
+          <input type="text" class="storm-input-text" />
+        </div>
+      </div>
+
+      <!-- S.C. Flange Row -->
+      <div class="storm-form-row">
+        <div class="storm-label">S.C. FLANGE-</div>
+        <div class="storm-input-area">
+          <input type="text" class="storm-input-text" />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
