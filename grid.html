@@ -1,18 +1,19 @@
+<!-- @format -->
+
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Chase Cover 2 Holes Order Form</title>
     <style>
-        .main-grid-container {
-            display: grid;
-            grid-template-columns: 45% 55%;
-            gap: 30px;
-            padding: 10px;
-        }
-        /* .main-grid-container > :nth-child(3) {
+      .main-grid-container {
+        display: grid;
+        grid-template-columns: 45% 55%;
+        gap: 30px;
+        padding: 10px;
+      }
+      /* .main-grid-container > :nth-child(3) {
             grid-column: 1 / span 1;
             width: 98%;
         }
@@ -21,169 +22,167 @@
             width: 98%;
         } */
 
-        .grid-container-1 {
-            display: grid;
-            /* grid-template-rows: auto auto; */
-            /* max-width: 1200px; */
-            /* margin: 0 auto; */
-            gap: 10px;
-            padding-left: 10px;
-        }
+      .grid-container-1 {
+        display: grid;
+        /* grid-template-rows: auto auto; */
+        /* max-width: 1200px; */
+        /* margin: 0 auto; */
+        gap: 10px;
+        padding-left: 10px;
+      }
 
-        .heading {
-            text-align: center;
-            /* grid-column: 1 / -1; */
-            border: 2px solid #333;
-            padding: 10px;
-        }
+      .heading {
+        text-align: center;
+        /* grid-column: 1 / -1; */
+        border: 2px solid #333;
+        padding: 10px;
+      }
 
-        .images-container {
-            display: grid;
-            grid-template-columns: 1fr;
-            /* gap: 20px; */
-            padding-left: 12px;
-        }
+      .images-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        /* gap: 20px; */
+        padding-left: 12px;
+      }
 
-        .grid-item img {
-            width: 80%;
-            object-fit: fill;
-            /* height: 250px; */
-            border: 1px solid #ccc;
-        }
+      .grid-item img {
+        width: 80%;
+        object-fit: fill;
+        /* height: 250px; */
+        border: 1px solid #ccc;
+      }
 
-        .grid-item .logo {
-            height: 130px;
-        }
+      .grid-item .logo {
+        height: 130px;
+      }
 
-        .grid-item .chase-cover-measurement {
-            height: 220px;
-        }
+      .grid-item .chase-cover-measurement {
+        height: 220px;
+      }
 
-        .grid-item .chase-cover-font {
-            height: 100px;
-        }
-        
-        h1 {
-            margin: 0;
-            font-size: 20px;
-            color: #666;
-        }
+      .grid-item .chase-cover-font {
+        height: 100px;
+      }
 
-        /* .grid-container-3 {
+      h1 {
+        margin: 0;
+        font-size: 20px;
+        color: #666;
+      }
+
+      /* .grid-container-3 {
             padding-left: 30px;
         } */
 
-        
-        .grid-container-3 {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            padding-left: 22px;
-        }
+      .grid-container-3 {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding-left: 22px;
+      }
 
-        .grid-container-2, 
-        .grid-container-4{
-            padding-right: 10px;
-        }
+      .grid-container-2,
+      .grid-container-4 {
+        padding-right: 10px;
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="main-grid-container">
-        <div class="grid-container-1">
-            <!-- Heading -->
-            <div class="heading">
-                <h1>CHASE COVER 2 HOLES ORDER FORM</h1>
-            </div>
-
-            <!-- Images Container -->
-            <div class="images-container">
-                <!-- Logo Image -->
-                <div class="grid-item">
-                    <img src="/imgs/ruschlogo.jpeg" alt="Rusch and Son Metalfab Logo" class="logo">
-                </div>
-
-                <!-- Main Size Diagram -->
-                <div class="grid-item">
-                    <img src="/imgs/mainsize.jpeg" alt="Chase Cover Diagram with Measurements" class="chase-cover-measurement">
-                </div>
-
-                <!-- Size Details Diagram -->
-                <div class="grid-item">
-                    <img src="/imgs/size.jpeg" alt="Chase Cover Front View Diagram" class="chase-cover-font">
-                </div>
-            </div>
+      <div class="grid-container-1">
+        <!-- Heading -->
+        <div class="heading">
+          <h1>CHASE COVER 2 HOLES ORDER FORM</h1>
         </div>
 
-        <div class="grid-container-2">
-            <!-- Form container 2 content will go here -->
-            <div id="info-form"></div>
-            <script>
-                fetch("index.html")
-                    .then((response) => response.text())
-                    .then((data) => {
-                        const parser = new DOMParser();
-                        const doc = parser.parseFromString(data, 'text/html');
-                        const infoForm = doc.getElementById("info-form");
-                        const styleTags = doc.querySelectorAll('style');
-                        
-                        // Append styles to the current document
-                        styleTags.forEach(style => {
-                            document.head.appendChild(style.cloneNode(true));
-                        });
+        <!-- Images Container -->
+        <div class="images-container">
+          <!-- Logo Image -->
+          <div class="grid-item">
+            <img
+              src="/imgs/ruschlogo.jpeg"
+              alt="Rusch and Son Metalfab Logo"
+              class="logo" />
+          </div>
 
-                        document.getElementById("info-form").innerHTML = infoForm.innerHTML;
-                    })
-                    .catch((error) => console.error("Error loading info form:", error));
-            </script>
-            
-             
+          <!-- Main Size Diagram -->
+          <div class="grid-item">
+            <img
+              src="/imgs/mainsize.jpeg"
+              alt="Chase Cover Diagram with Measurements"
+              class="chase-cover-measurement" />
+          </div>
+
+          <!-- Size Details Diagram -->
+          <div class="grid-item">
+            <img
+              src="/imgs/size.jpeg"
+              alt="Chase Cover Front View Diagram"
+              class="chase-cover-font" />
+          </div>
         </div>
+      </div>
 
-        <div class="grid-container-3">
-            <!-- Form container 3 content will go here -->
-             <div id="collar-section"></div>
-      <script>
-        fetch("sections/CollarSection.html")
-          .then((response) => response.text())
-          .then((data) => {
-            document.getElementById("collar-section").innerHTML = data;
-          })
-          .catch((error) => console.error("Error loading section:", error));
-      </script>
-      
-      <div id="storm-section"></div>
-      <script>
-        fetch("sections/StormSection.html")
-          .then((response) => response.text())
-          .then((data) => {
-            document.getElementById("storm-section").innerHTML = data;
-          })
-          .catch((error) => console.error("Error loading section:", error));
-      </script>
-    
-             
-             
-             
-        </div>
+      <div class="grid-container-2">
+        <!-- Form container 2 content will go here -->
+        <div id="info-form"></div>
+        <script>
+          fetch("index.html")
+            .then((response) => response.text())
+            .then((data) => {
+              const parser = new DOMParser();
+              const doc = parser.parseFromString(data, "text/html");
+              const infoForm = doc.getElementById("info-form");
+              const styleTags = doc.querySelectorAll("style");
 
-        <div class="grid-container-4">
-            <!-- Form container 4 content will go here -->
-             <div id="note-section"></div>
-             <script>
-               fetch("sections/NoteSection.html")
-                 .then((response) => response.text())
-                 .then((data) => {
-                   document.getElementById("note-section").innerHTML = data;
-                 })
-                 .catch((error) => console.error("Error loading section:", error));
-             </script>
-           
-             
-        </div>
+              // Append styles to the current document
+              styleTags.forEach((style) => {
+                document.head.appendChild(style.cloneNode(true));
+              });
 
+              document.getElementById("info-form").innerHTML =
+                infoForm.innerHTML;
+            })
+            .catch((error) => console.error("Error loading info form:", error));
+        </script>
+      </div>
 
+      <div class="grid-container-3">
+        <!-- Form container 3 content will go here -->
+        <div id="collar-section"></div>
+        <script>
+          fetch("sections/CollarSection.html")
+            .then((response) => response.text())
+            .then((data) => {
+              document.getElementById("collar-section").innerHTML = data;
+            })
+            .catch((error) => console.error("Error loading section:", error));
+        </script>
+
+        <div id="storm-section"></div>
+        <script>
+          fetch("sections/StormSection.html")
+            .then((response) => response.text())
+            .then((data) => {
+              document.getElementById("storm-section").innerHTML = data;
+            })
+            .catch((error) => console.error("Error loading section:", error));
+        </script>
+      </div>
+
+      <div class="grid-container-4">
+        <!-- Form container 4 content will go here -->
+        <div id="note-section"></div>
+        <script>
+          fetch("sections/NoteSection.html")
+            .then((response) => response.text())
+            .then((data) => {
+              document.getElementById("note-section").innerHTML = data;
+            })
+            .catch((error) => console.error("Error loading section:", error));
+        </script>
+      </div>
     </div>
-</body>
-
+  </body>
 </html>

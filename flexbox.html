@@ -37,6 +37,30 @@
   </head>
   <body>
     <div class="container">
+      <div id="image-section"></div>
+      <script>
+        fetch("sections/ImageSection.html")
+          .then((response) => response.text())
+          .then((data) => {
+            document.getElementById("image-section").innerHTML = data;
+          })
+          .catch((error) => console.error("Error loading section:", error));
+      </script>
+      <div class="content-section">
+        <div id="info-form"></div>
+        <script>
+          fetch("index.html")
+            .then((response) => response.text())
+            .then((data) => {
+              document.getElementById("info-form").innerHTML = data;
+            })
+            .catch((error) => console.error("Error loading section:", error));
+        </script>
+      </div>
+    </div>
+    <br />
+
+    <div class="container">
       <div id="collar-section"></div>
       <script>
         fetch("sections/CollarSection.html")
@@ -60,13 +84,24 @@
     </div>
     <br />
 
-    <div>
+    <div class="container">
       <div id="storm-section"></div>
       <script>
         fetch("sections/StormSection.html")
           .then((response) => response.text())
           .then((data) => {
             document.getElementById("storm-section").innerHTML = data;
+          })
+          .catch((error) => console.error("Error loading section:", error));
+      </script>
+
+      <br />
+      <div id="loose-collars-section"></div>
+      <script>
+        fetch("sections/LOOSECOLLARS.html")
+          .then((response) => response.text())
+          .then((data) => {
+            document.getElementById("loose-collars-section").innerHTML = data;
           })
           .catch((error) => console.error("Error loading section:", error));
       </script>

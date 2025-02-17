@@ -7,9 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Collar Specifications Form</title>
     <style>
+      #collar-section {
+        margin-bottom: 10px;
+      }
       .collar-form-container {
+        width: 500px;
         background-color: white;
-        
+        margin-bottom: 10px;
       }
 
       .collar-form-row {
@@ -75,7 +79,7 @@
         font-weight: bold;
         text-transform: uppercase;
       }
-      /* 
+      /*
       .collar-short-long-cell:first-child {
         border-right: 2px solid black;
       } */
@@ -85,8 +89,17 @@
         border-bottom: none;
       }
 
-      .collar-short-long-input {
-        border: none;
+      .collar-short-long-input-SHORT {
+        font-size: 17px;
+        border-right: 3px solid black;
+        outline: none;
+        background-color: transparent;
+      }
+
+      .collar-short-long-input-LONG {
+        width: 100%;
+        font-size: 17px;
+        border-top: 1px solid black;
         outline: none;
         background-color: transparent;
       }
@@ -161,9 +174,9 @@
         </div>
         <div class="collar-short-long-row">
           <div class="collar-short-long-cell">SHORT-</div>
-          <input class="collar-short-long-input" type="text" />
+          <input class="collar-short-long-input-SHORT" type="text" />
           <div class="collar-short-long-cell">LONG-</div>
-          <input class="collar-short-long-input" type="text" />
+          <input class="collar-short-long-input-LONG" type="text" />
         </div>
       </div>
 
