@@ -1,0 +1,325 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Invoice Form</title>
+    <style>
+      .invoice-form-container {
+        border: 1px 2px 3px 4px solid black;
+      }
+
+      .invoice-form-row {
+        display: flex;
+
+        border-bottom: 3px solid black;
+      }
+
+      .invoice-form-label {
+        min-width: 120px;
+        padding: 8px;
+        /* border-right: 1px solid black; */
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+
+      .invoice-form-input {
+        flex: 1;
+        padding: 8px;
+        background-color: #ffff00;
+      }
+
+      .invoice-form-input-text {
+        flex: 1;
+        font-size: 16px;
+        /* padding: 8px 0px 8px 0px; */
+        background-color: #ffff00;
+        width: 100%;
+        border: none;
+        outline: none;
+      }
+
+      .invoice-phone-input {
+        background-color: #ffcccb;
+
+        flex: 1;
+        padding: 8px;
+      }
+
+      .invoice-phone-input-text {
+        flex: 1;
+        font-size: 16px;
+        background-color: #ffcccb;
+        width: 100%;
+        border: none;
+        outline: none;
+      }
+
+      .invoice-measurement-container {
+        padding-left: 125px;
+      }
+
+      .invoice-measurement-row {
+        display: flex;
+        border-bottom: 3px solid black;
+      }
+
+      .invoice-measurement-label {
+        width: 200px;
+        padding: 8px;
+        text-align: center;
+        border-right: 1px solid black;
+      }
+
+      .invoice-rush-section {
+        display: flex;
+        border-bottom: 2px solid black;
+        background-color: #ffff00;
+      }
+
+      .invoice-rush-box {
+        padding: 2px 10px 0px 10px;
+        border-right: 1px solid black;
+      }
+
+      .invoice-drip-edge {
+        display: flex;
+        align-items: center;
+      }
+
+      .invoice-drip-label {
+        padding: 8px;
+      }
+
+      .invoice-checkbox-group {
+        display: flex;
+        gap: 20px;
+        padding: 8px;
+      }
+
+      .invoice-checkbox-container {
+        display: flex;
+        flex-direction: column;
+        /* align-items: center; */
+        /* gap: 5px; */
+      }
+
+      .rush-section {
+        width: 120px;
+        border-right: 3px solid black;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .rush-header {
+        width: 100%;
+        background-color: #ffff00;
+        padding-top: 15px;
+        text-align: center;
+        font-weight: bold;
+        border: 3px solid black;
+      }
+
+      .rush-checkbox {
+        margin-top: 5px;
+        width: 20px;
+        height: 20px;
+        border: 2px solid #0000ff;
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background: white;
+        cursor: pointer;
+      }
+
+      .drip-section {
+        padding-top: 40px;
+        flex: 1;
+        display: flex;
+        align-items: center;
+      }
+
+      .drip-label {
+        width: 200px;
+        text-align: center;
+        padding: 0 20px;
+        font-size: 18px;
+        font-weight: bold;
+      }
+
+      .checkbox-area {
+        flex: 1;
+        background-color: #ffff00;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        gap: 100px;
+      }
+
+      .yes-no-labels {
+        position: absolute;
+        top: -20px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 100px;
+        font-weight: bold;
+      }
+
+      .checkbox-container {
+        display: flex;
+        align-items: center;
+        padding-top: 20px;
+      }
+
+      .checkbox-yes {
+        width: 20px;
+        height: 20px;
+        border: 2px solid #0000ff;
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background: white;
+        cursor: pointer;
+      }
+
+      .checkbox-no {
+        width: 20px;
+        height: 20px;
+        border: 2px solid #ff0000;
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background: white;
+        cursor: pointer;
+      }
+
+      .checkbox-yes:checked,
+      .checkbox-no:checked,
+      .rush-checkbox:checked {
+        background-color: #888;
+      }
+
+      .form-row {
+        display: flex;
+
+        border-bottom: 0px solid black;
+        border-left: 3px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="info-form" class="invoice-form-container">
+      <div class="invoice-form-row">
+        <div class="invoice-form-label" style="padding-top: 8px">DATE-</div>
+        <div class="invoice-form-input">
+          <input class="invoice-form-input-text" type="text" />
+        </div>
+      </div>
+
+      <div class="invoice-form-row">
+        <div class="invoice-form-label">COMPANY-</div>
+        <div class="invoice-form-input">
+          <input class="invoice-form-input-text" type="text" />
+        </div>
+      </div>
+
+      <div class="invoice-form-row">
+        <div class="invoice-form-label">NAME-</div>
+        <div class="invoice-form-input">
+          <input class="invoice-form-input-text" type="text" />
+        </div>
+      </div>
+
+      <div class="invoice-form-row">
+        <div class="invoice-form-label">PHONE#</div>
+        <div class="invoice-phone-input">
+          <input class="invoice-phone-input-text" type="text" />
+        </div>
+      </div>
+
+      <div class="invoice-form-row">
+        <div class="invoice-form-label">PO/JOB-</div>
+        <div class="invoice-form-input">
+          <input class="invoice-form-input-text" type="text" />
+        </div>
+      </div>
+
+      <div class="invoice-form-row">
+        <div class="invoice-form-label">MATERIAL-</div>
+        <div class="invoice-form-input">
+          <input class="invoice-form-input-text" type="text" />
+        </div>
+      </div>
+
+      <div class="invoice-measurement-container">
+        <div class="invoice-measurement-row">
+          <div class="invoice-measurement-label">1) LONG SIDE-</div>
+          <div class="invoice-form-input">
+            <input class="invoice-form-input-text" type="text" />
+          </div>
+        </div>
+
+        <div class="invoice-measurement-row">
+          <div class="invoice-measurement-label">2) SHORT SIDE-</div>
+          <div class="invoice-form-input">
+            <input class="invoice-form-input-text" type="text" />
+          </div>
+        </div>
+
+        <div class="invoice-measurement-row">
+          <div class="invoice-measurement-label">3) LONG SIDE-</div>
+          <div class="invoice-form-input">
+            <input class="invoice-form-input-text" type="text" />
+          </div>
+        </div>
+
+        <div class="invoice-measurement-row">
+          <div class="invoice-measurement-label">4) SHORT SIDE-</div>
+          <div class="invoice-form-input">
+            <input class="invoice-form-input-text" type="text" />
+          </div>
+        </div>
+
+        <div class="invoice-measurement-row">
+          <div class="invoice-measurement-label">COLLAR HEIGHT-</div>
+          <div class="invoice-form-input">
+            <input class="invoice-form-input-text" type="text" />
+          </div>
+        </div>
+
+        <div class="invoice-measurement-row">
+          <div class="invoice-measurement-label">SKIRT HEIGHT-</div>
+          <div class="invoice-form-input">
+            <input class="invoice-form-input-text" type="text" />
+          </div>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="rush-section">
+          <div class="rush-header">RUSH + $50</div>
+          <input type="checkbox" class="rush-checkbox" />
+        </div>
+        <div class="drip-section">
+          <div class="drip-label">DRIP EDGE-</div>
+          <div class="checkbox-area">
+            <div class="yes-no-labels">
+              <span>YES</span>
+              <span>NO</span>
+            </div>
+            <div class="checkbox-container">
+              <input type="checkbox" class="checkbox-yes" />
+            </div>
+            <div class="checkbox-container">
+              <input type="checkbox" class="checkbox-no" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
