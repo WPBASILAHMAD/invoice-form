@@ -1,50 +1,34 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const sections = document.querySelectorAll(".astra-section")
-  const navLinks = document.querySelectorAll(".astra-nav a")
+/** @format */
 
-  const observerOptions = {
-    root: null,
-    rootMargin: "0px",
-    threshold: 0.1,
+// Collar Size Selection
+document.getElementById("collarSize")?.addEventListener("change", function () {
+  let selectedValue = this.value;
+  localStorage.setItem("selectedCollarSize", selectedValue);
+  window.dispatchEvent(new Event("collarSizeUpdated"));
+});
+
+// Chase Cover Dropdown Logic
+document.getElementById("chaseCover")?.addEventListener("change", updateFields);
+
+function updateFields() {
+  let dropdownValue = document.getElementById("chaseCover").value;
+  let standingSeams1 = document.getElementById("standingSeams1");
+  let standingSeams2 = document.getElementById("standingSeams2");
+  let standingSeams3 = document.getElementById("standingSeams3");
+
+  if (dropdownValue === "" || dropdownValue === "N/A") {
+    standingSeams1.value = "";
+    standingSeams2.value = "";
+    standingSeams3.value = "";
+    return;
   }
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("active")
-        updateNavigation(entry.target.id)
-      }
-    })
-  }, observerOptions)
+  let H20 = parseInt(dropdownValue);
+  let H21 = H20 - 1;
+  standingSeams1.value = H21;
 
-  sections.forEach((section) => {
-    observer.observe(section)
-  })
-
-  function updateNavigation(currentId) {
-    navLinks.forEach((link) => {
-      if (link.getAttribute("href").slice(1) === currentId) {
-        link.style.color = "var(--accent-color-1)"
-      } else {
-        link.style.color = "var(--text-color)"
-      }
-    })
-  }
-
-  // Smooth scrolling for navigation links
-  navLinks.forEach((link) => {
-    link.addEventListener("click", (e) => {
-      e.preventDefault()
-      const targetId = link.getAttribute("href").slice(1)
-      const targetSection = document.getElementById(targetId)
-      targetSection.scrollIntoView({ behavior: "smooth" })
-    })
-  })
-
-  // Animate features on scroll
-  const features = document.querySelectorAll(".astra-feature")
-  features.forEach((feature, index) => {
-    feature.style.transitionDelay = `${index * 0.1}s`
-  })
-})
-
+  let J8 = 100;
+  let result = H21 === 1 ? (4 * J8) / 144 : (8 * J8) / 144;
+  standingSeams2.value = result.toFixed(2);
+  standingSeams3.value = "A = 2 In. X";
+}

@@ -1,0 +1,733 @@
+/** @format */
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+
+.image-form-container {
+  width: 590px;
+}
+
+.image-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.image-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px; /* Reduced spacing */
+  border: 2px solid gray; /* Set border to 2 pixels in gray color */
+  display: inline-block; /* Ensure the border wraps around the text */
+  padding: 5px; /* Add some padding for better appearance */
+}
+
+.image-logo {
+  max-width: 360px;
+  margin: 5px 0; /* Reduced spacing */
+  display: block; /* Ensure the image is displayed as a block element */
+  margin-left: auto; /* Center the image horizontally */
+  margin-right: auto; /* Center the image horizontally */
+}
+
+.image {
+  max-width: 560px;
+  margin: 5px 0; /* Reduced spacing */
+  display: block; /* Ensure the image is displayed as a block element */
+  margin-left: auto; /* Center the image horizontally */
+  margin-right: auto; /* Center the image horizontally */
+}
+
+.invoice-form-container {
+  border: 1px 2px 3px 4px solid black;
+}
+
+.invoice-form-row {
+  display: flex;
+
+  border-bottom: 3px solid black;
+}
+
+.invoice-form-label {
+  min-width: 120px;
+  padding: 8px;
+  /* border-right: 1px solid black; */
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.invoice-form-input {
+  flex: 1;
+  padding: 8px;
+  background-color: #ffff00;
+}
+
+.invoice-form-input-text {
+  flex: 1;
+  font-size: 16px;
+  /* padding: 8px 0px 8px 0px; */
+  background-color: #ffff00;
+  width: 100%;
+  border: none;
+  outline: none;
+}
+
+.invoice-phone-input {
+  background-color: #ffcccb;
+
+  flex: 1;
+  padding: 8px;
+}
+
+.invoice-phone-input-text {
+  flex: 1;
+  font-size: 16px;
+  background-color: #ffcccb;
+  width: 100%;
+  border: none;
+  outline: none;
+}
+
+.invoice-measurement-container {
+  padding-left: 125px;
+}
+
+.invoice-measurement-row {
+  display: flex;
+  border-bottom: 3px solid black;
+}
+
+.invoice-measurement-label {
+  width: 200px;
+  padding: 8px;
+  text-align: center;
+  border-right: 1px solid black;
+}
+
+.invoice-rush-section {
+  display: flex;
+  border-bottom: 2px solid black;
+  background-color: #ffff00;
+}
+
+.invoice-rush-box {
+  padding: 2px 10px 0px 10px;
+  border-right: 1px solid black;
+}
+
+.invoice-drip-edge {
+  display: flex;
+  align-items: center;
+}
+
+.invoice-drip-label {
+  padding: 8px;
+}
+
+.invoice-checkbox-group {
+  display: flex;
+  gap: 20px;
+  padding: 8px;
+}
+
+.invoice-checkbox-container {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  /* gap: 5px; */
+}
+
+.rush-section {
+  width: 120px;
+  border-right: 3px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.rush-header {
+  width: 100%;
+  background-color: #ffff00;
+  padding-top: 15px;
+  text-align: center;
+  font-weight: bold;
+  border: 3px solid black;
+}
+
+.rush-checkbox {
+  margin-top: 5px;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #0000ff;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: white;
+  cursor: pointer;
+}
+
+.drip-section {
+  padding-top: 40px;
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.drip-label {
+  width: 200px;
+  text-align: center;
+  padding: 0 20px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.checkbox-area {
+  flex: 1;
+  background-color: #ffff00;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+}
+
+.yes-no-labels {
+  position: absolute;
+  top: -20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+  font-weight: bold;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  padding-top: 20px;
+}
+
+.checkbox-yes {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #0000ff;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: white;
+  cursor: pointer;
+}
+
+.checkbox-no {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ff0000;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: white;
+  cursor: pointer;
+}
+
+.checkbox-yes:checked,
+.checkbox-no:checked,
+.rush-checkbox:checked {
+  background-color: #888;
+}
+
+.form-row {
+  display: flex;
+
+  border-bottom: 0px solid black;
+  border-left: 3px solid black;
+}
+
+#collar-section {
+  margin-bottom: 10px;
+}
+.collar-form-container {
+  width: 500px;
+  background-color: white;
+  margin-bottom: 10px;
+}
+
+.collar-form-row {
+  display: flex;
+  border-bottom: 1px solid black;
+  min-height: 30px;
+}
+
+.collar-form-label {
+  width: 180px;
+  padding: 8px;
+  /* border-right: 1px solid black; */
+  font-weight: bold;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  background-color: #f8f9fa;
+}
+
+.collar-form-input {
+  flex: 1;
+  padding: 8px;
+  background-color: #ffff00;
+  outline: none;
+}
+
+.collar-form-input-text {
+  flex: 1;
+  font-size: 16px;
+  background-color: #ffff00;
+  width: 100%;
+  border: none;
+  outline: none;
+}
+
+.collar-section-header {
+  text-align: center;
+  padding: 6px;
+
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: underline;
+}
+
+.collar-location-container {
+  border: 2px solid black;
+  margin: 0;
+  background-color: white;
+}
+
+.collar-short-long-row {
+  display: flex;
+  border-top: 1px solid black !important;
+  border: 0px solid black;
+}
+
+.collar-short-long-cell {
+  flex: 1;
+  border-right: 2px solid black;
+
+  padding: 6px;
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+/*
+.collar-short-long-cell:first-child {
+  border-right: 2px solid black;
+} */
+
+/* Remove bottom border from last elements */
+.collar-location-container:last-child .collar-form-row:last-child {
+  border-bottom: none;
+}
+
+.collar-short-long-input-SHORT {
+  font-size: 17px;
+  border-right: 3px solid black;
+  outline: none;
+  background-color: transparent;
+}
+
+.collar-short-long-input-LONG {
+  width: 100%;
+  font-size: 17px;
+  border-top: 1px solid black;
+  outline: none;
+  background-color: transparent;
+}
+
+.form-container {
+  /* width: 800px; */
+  border: 3px solid #ff0000;
+}
+
+.header {
+  background-color: #e6f3ff;
+  text-align: center;
+  padding: 8px;
+  font-weight: bold;
+  border-bottom: 3px solid black;
+}
+
+.yellow-row {
+  flex: 1;
+  height: 30px;
+  background-color: #ffff00;
+  border-bottom: 3px solid black;
+}
+
+.pink-row {
+  flex: 1;
+  height: 30px;
+  background-color: #ffe4e1;
+  border-bottom: 3px solid black;
+}
+
+.white-row {
+  flex: 1;
+  height: 30px;
+  border-bottom: 3px solid black;
+}
+
+.sections-row {
+  display: flex;
+  border-bottom: 2px solid black;
+}
+
+.section-label {
+  width: 200px;
+  padding: 8px;
+  text-align: center;
+  border-right: 3px solid black;
+  font-weight: bold;
+}
+
+.section-cell {
+  flex: 1;
+  border-right: 3px solid black;
+}
+
+.section-cell:last-child {
+  border-right: none;
+}
+
+.stock-row {
+  display: flex;
+  /* width: 100%; */
+  border-bottom: 3px solid black;
+}
+
+.stock-label {
+  width: 40%;
+  padding: 8px;
+  text-align: right;
+  border-right: 3px solid black;
+}
+
+.x-mark {
+  flex: 1;
+  width: 100px;
+  text-align: center;
+  padding: 8px;
+}
+
+.row {
+  display: flex;
+  border-bottom: 2px solid black;
+  height: 35px;
+}
+
+.row:last-child {
+  border-bottom: none;
+}
+
+.number-cell {
+  flex: 0.25;
+  width: 100px;
+  text-align: center;
+  border-right: 3px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.total-sq-cell {
+  flex: 1;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+}
+.total-sq-cell-1 {
+  flex: 1;
+
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  border: none;
+}
+
+.solder-cell {
+  flex: 0.69;
+  width: 100px;
+  text-align: center;
+  border-right: 3px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.empty-cell {
+  flex: 0.25;
+  width: 100px;
+  border-right: 3px solid black;
+}
+
+.total-cost-cell {
+  width: 150px;
+  border-right: 3px solid black;
+  display: flex;
+  align-items: center;
+  padding-left: 8px;
+  font-weight: bold;
+}
+
+.yellow-cell {
+  flex: 1;
+  background-color: #ffff00;
+}
+
+.form-input-text {
+  flex: 1;
+  font-size: 16px;
+  /* padding: 8px 0px 8px 0px; */
+
+  width: 100%;
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+
+.storm-form-container {
+  width: 500px;
+}
+
+.storm-form-form-input-text {
+  flex: 1;
+  padding: 8px;
+  background-color: #ffff00;
+}
+
+.storm-form-form-input-text {
+  flex: 1;
+  font-size: 16px;
+  /* padding: 8px 0px 8px 0px; */
+  background-color: #ffff00;
+  width: 100%;
+  border: none;
+  outline: none;
+}
+
+.storm-form-row {
+  display: flex;
+  border-bottom: 2px solid black;
+  height: 50px;
+  position: relative;
+}
+
+.storm-label {
+  width: 200px;
+  text-align: right;
+  margin: 20px;
+  align-items: center;
+  padding-right: 10px;
+  font-size: 17px;
+  font-weight: bold;
+  margin-right: 0; /* Ensures the label aligns to the right */
+}
+
+.storm-input-area {
+  flex: 1;
+
+  background-color: #ffff00;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.storm-yes-no-labels {
+  position: absolute;
+  top: -25px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.storm-checkbox-container {
+  display: flex;
+  gap: 100px;
+}
+
+.storm-checkbox-yes {
+  width: 25px;
+  height: 25px;
+  border: 2px solid #0000ff;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: white;
+  cursor: pointer;
+}
+
+.storm-checkbox-no {
+  width: 25px;
+  height: 25px;
+  border: 2px solid #ff0000;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: white;
+  cursor: pointer;
+}
+
+.storm-checkbox-yes:checked,
+.storm-checkbox-no:checked {
+  background-color: #888;
+}
+
+.loose-collars-container {
+  margin-top: 20px;
+  width: 700px;
+}
+
+.loose-collars-row {
+  display: flex;
+  margin-left: 20px;
+  border-bottom: 2px solid black;
+  height: 50px;
+  position: relative;
+}
+
+.loose-collars-label {
+  width: 300px;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.loose-collars-input-area {
+  flex: 1;
+  background-color: #ffff00;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.loose-collars-yes-no-labels {
+  position: absolute;
+  top: -25px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 200px;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.loose-collars-checkbox-container {
+  display: flex;
+  gap: 200px;
+}
+
+.loose-collars-checkbox-yes {
+  width: 25px;
+  height: 25px;
+  border: 2px solid #0000ff;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: white;
+  cursor: pointer;
+}
+
+.loose-collars-checkbox-no {
+  width: 25px;
+  height: 25px;
+  border: 2px solid #ff0000;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: white;
+  cursor: pointer;
+}
+
+.loose-collars-checkbox-yes:checked,
+.loose-collars-checkbox-no:checked {
+  background-color: #888;
+}
+
+/* Only show YES/NO labels above the first row */
+.loose-collars-row:first-child .loose-collars-yes-no-labels {
+  display: flex;
+}
+
+.loose-collars-row:not(:first-child) .loose-collars-yes-no-labels {
+  display: none;
+}
+
+.custom-form-container-x7y9z {
+  width: 60%;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center; /* Adjust as needed */
+}
+
+.custom-form-table-x7y9z {
+  border-collapse: collapse;
+  width: 100%;
+  font-family: Arial, sans-serif;
+}
+
+.custom-form-table-x7y9z td {
+  border: 2px solid black;
+  padding: 6px 8px;
+  height: 28px;
+}
+
+.custom-form-header-row-x7y9z td {
+  text-align: right;
+  font-weight: normal;
+  padding-right: 8px;
+}
+
+.custom-form-label-cell-x7y9z {
+  font-weight: 700;
+  text-align: right;
+  padding-right: 8px !important;
+  white-space: nowrap;
+}
+
+.custom-form-input-cell-x7y9z {
+  padding: 0 !important;
+  width: 120px;
+}
+
+.custom-form-input-cell-x7y9z input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  padding: 6px 8px;
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+  background: transparent;
+}
+
+.custom-form-highlighted-x7y9z {
+  background-color: #ffff00;
+}
+
+.custom-form-table-x7y9z tr:first-child td:first-child {
+  border-top: none;
+  border-left: none;
+}
+
+.parent-container {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}

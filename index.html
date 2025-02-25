@@ -6,6 +6,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Two-Section Flexbox</title>
+    <link rel="stylesheet" href="style.css" />
     <style>
       .container {
         display: flex;
@@ -37,74 +38,914 @@
   </head>
   <body>
     <div class="container">
-      <div id="image-section"></div>
-      <script>
-        fetch("sections/ImageSection.html")
-          .then((response) => response.text())
-          .then((data) => {
-            document.getElementById("image-section").innerHTML = data;
-          })
-          .catch((error) => console.error("Error loading section:", error));
-      </script>
+      <div id="image-section" class="image-form-container">
+        <div class="image-header">
+          <div class="image-title">CHASE COVER 2 HOLES ORDER FORM</div>
+          <img
+            src="https://i.postimg.cc/NffS3Svx/ruschlogo-jpeg.jpg"
+            alt="Rusch and Son Metalfab Logo"
+            class="image-logo"
+            loading="lazy" />
+          <img
+            src="https://i.postimg.cc/1tQYJYKw/mainsize-jpeg.jpg"
+            alt="Rusch and Son Metalfab Logo"
+            class="image-logo"
+            loading="lazy" />
+          <img
+            src="https://i.postimg.cc/L54QMYws/size-jpeg.jpg"
+            alt="Rusch and Son Metalfab Logo"
+            class="image-logo"
+            loading="lazy" />
+        </div>
+      </div>
       <div class="content-section">
-        <div id="info-form"></div>
-        <script>
-          fetch("/invoice-form/sections/InfoSection.html")
-            .then((response) => response.text())
-            .then((data) => {
-              document.getElementById("info-form").innerHTML = data;
-            })
-            .catch((error) => console.error("Error loading section:", error));
-        </script>
+        <div id="info-form" class="invoice-form-container">
+          <div class="invoice-form-row">
+            <div class="invoice-form-label" style="padding-top: 8px">DATE-</div>
+            <div class="invoice-form-input">
+              <input class="invoice-form-input-text" type="text" />
+            </div>
+          </div>
+
+          <div class="invoice-form-row">
+            <div class="invoice-form-label">COMPANY-</div>
+            <div class="invoice-form-input">
+              <input class="invoice-form-input-text" type="text" />
+            </div>
+          </div>
+
+          <div class="invoice-form-row">
+            <div class="invoice-form-label">NAME-</div>
+            <div class="invoice-form-input">
+              <input class="invoice-form-input-text" type="text" />
+            </div>
+          </div>
+
+          <div class="invoice-form-row">
+            <div class="invoice-form-label">PHONE#</div>
+            <div class="invoice-phone-input">
+              <input class="invoice-phone-input-text" type="text" />
+            </div>
+          </div>
+
+          <div class="invoice-form-row">
+            <div class="invoice-form-label">PO/JOB-</div>
+            <div class="invoice-form-input">
+              <input class="invoice-form-input-text" type="text" />
+            </div>
+          </div>
+
+          <div class="invoice-form-row">
+            <div class="invoice-form-label">MATERIAL-</div>
+            <div class="invoice-form-input">
+              <select class="invoice-form-input-text">
+                <option value="">Select Material</option>
+                <option value="STAINLESS STEEL">STAINLESS STEEL</option>
+                <option value="GALVANIZED">GALVANIZED</option>
+                <option value="COPPER">COPPER</option>
+                <option value="BLACK">BLACK</option>
+                <option value="BROWN">BROWN</option>
+                <option value="WHITE">WHITE</option>
+                <option value="DARK BRONZE">DARK BRONZE</option>
+                <option value="PRIMER">PRIMER</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="invoice-measurement-container">
+            <div class="invoice-measurement-row">
+              <div class="invoice-measurement-label">1) LONG SIDE-</div>
+              <div class="invoice-form-input">
+                <input class="invoice-form-input-text" type="text" />
+              </div>
+            </div>
+
+            <div class="invoice-measurement-row">
+              <div class="invoice-measurement-label">2) SHORT SIDE-</div>
+              <div class="invoice-form-input">
+                <input class="invoice-form-input-text" type="text" />
+              </div>
+            </div>
+
+            <div class="invoice-measurement-row">
+              <div class="invoice-measurement-label">3) LONG SIDE-</div>
+              <div class="invoice-form-input">
+                <input class="invoice-form-input-text" type="text" />
+              </div>
+            </div>
+
+            <div class="invoice-measurement-row">
+              <div class="invoice-measurement-label">4) SHORT SIDE-</div>
+              <div class="invoice-form-input">
+                <input class="invoice-form-input-text" type="text" />
+              </div>
+            </div>
+
+            <div class="invoice-measurement-row">
+              <div class="invoice-measurement-label">COLLAR HEIGHT-</div>
+              <div class="invoice-form-input">
+                <select class="invoice-form-input-text">
+                  <option value="">Select Collar Height</option>
+                  <option value="1 In">1 In</option>
+                  <option value="2 In">2 In</option>
+                  <option value="2.5 In">2.5 In</option>
+                  <option value="3 In">3 In</option>
+                  <option value="3.5 In">3.5 In</option>
+                  <option value="3.75 In">3.75 In</option>
+                  <option value="4 In">4 In</option>
+                  <option value="4.5 In">4.5 In</option>
+                  <option value="4.75 In">4.75 In</option>
+                  <option value="5 In">5 In</option>
+                  <option value="5.5 In">5.5 In</option>
+                  <option value="6 In">6 In</option>
+                  <option value="6.5 In">6.5 In</option>
+                  <option value="7 In">7 In</option>
+                  <option value="7.25 In">7.25 In</option>
+                  <option value="8 In">8 In</option>
+                  <option value="8.25 In">8.25 In</option>
+                  <option value="8.5 In">8.5 In</option>
+                  <option value="8.75 In">8.75 In</option>
+                  <option value="9 In">9 In</option>
+                  <option value="9.5 In">9.5 In</option>
+                  <option value="10 In">10 In</option>
+                  <option value="10.5 In">10.5 In</option>
+                  <option value="11 In">11 In</option>
+                  <option value="11.5 In">11.5 In</option>
+                  <option value="12.25 In">12.25 In</option>
+                  <option value="13 In">13 In</option>
+                  <option value="13.5 In">13.5 In</option>
+                  <option value="13.75 In">13.75 In</option>
+                  <option value="14 In">14 In</option>
+                  <option value="14.25 In">14.25 In</option>
+                  <option value="14.5 In">14.5 In</option>
+                  <option value="15 In">15 In</option>
+                  <option value="15.5 In">15.5 In</option>
+                  <option value="16.25 In">16.25 In</option>
+                  <option value="16.5 In">16.5 In</option>
+                  <option value="17 In">17 In</option>
+                  <option value="18.75 In">18.75 In</option>
+                  <option value="12.5 X 16.5 In">12.5 X 16.5 In</option>
+                  <option value="13 X 17 In">13 X 17 In</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="invoice-measurement-row">
+              <div class="invoice-measurement-label">SKIRT HEIGHT-</div>
+              <div class="invoice-form-input">
+                <select class="invoice-form-input-text">
+                  <option value="">Select Skirt Height</option>
+                  <option value="1 In">1 In</option>
+                  <option value="2 In">2 In</option>
+                  <option value="2.5 In">2.5 In</option>
+                  <option value="3 In">3 In</option>
+                  <option value="3.5 In">3.5 In</option>
+                  <option value="3.75 In">3.75 In</option>
+                  <option value="4 In">4 In</option>
+                  <option value="4.5 In">4.5 In</option>
+                  <option value="4.75 In">4.75 In</option>
+                  <option value="5 In">5 In</option>
+                  <option value="5.5 In">5.5 In</option>
+                  <option value="6 In">6 In</option>
+                  <option value="6.5 In">6.5 In</option>
+                  <option value="7 In">7 In</option>
+                  <option value="7.25 In">7.25 In</option>
+                  <option value="8 In">8 In</option>
+                  <option value="8.25 In">8.25 In</option>
+                  <option value="8.5 In">8.5 In</option>
+                  <option value="8.75 In">8.75 In</option>
+                  <option value="9 In">9 In</option>
+                  <option value="9.5 In">9.5 In</option>
+                  <option value="10 In">10 In</option>
+                  <option value="10.5 In">10.5 In</option>
+                  <option value="11 In">11 In</option>
+                  <option value="11.5 In">11.5 In</option>
+                  <option value="12.25 In">12.25 In</option>
+                  <option value="13 In">13 In</option>
+                  <option value="13.5 In">13.5 In</option>
+                  <option value="13.75 In">13.75 In</option>
+                  <option value="14 In">14 In</option>
+                  <option value="14.25 In">14.25 In</option>
+                  <option value="14.5 In">14.5 In</option>
+                  <option value="15 In">15 In</option>
+                  <option value="15.5 In">15.5 In</option>
+                  <option value="16.25 In">16.25 In</option>
+                  <option value="16.5 In">16.5 In</option>
+                  <option value="17 In">17 In</option>
+                  <option value="18.75 In">18.75 In</option>
+                  <option value="12.5 X 16.5 In">12.5 X 16.5 In</option>
+                  <option value="13 X 17 In">13 X 17 In</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="rush-section">
+              <div class="rush-header">RUSH + $50</div>
+              <input type="checkbox" class="rush-checkbox" />
+            </div>
+            <div class="drip-section">
+              <div class="drip-label">DRIP EDGE-</div>
+              <div class="checkbox-area">
+                <div class="yes-no-labels">
+                  <span>YES</span>
+                  <span>NO</span>
+                </div>
+                <div class="checkbox-container">
+                  <input type="checkbox" class="checkbox-yes" />
+                </div>
+                <div class="checkbox-container">
+                  <input type="checkbox" class="checkbox-no" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <br />
 
     <div class="container">
-      <div id="collar-section"></div>
-      <script>
-        fetch("sections/CollarSection.html")
-          .then((response) => response.text())
-          .then((data) => {
-            document.getElementById("collar-section").innerHTML = data;
-          })
-          .catch((error) => console.error("Error loading section:", error));
-      </script>
+      <div id="collar-section" class="collar-form-container">
+        <!-- Initial Collar Details -->
+        <div class="collar-form-row">
+          <div class="collar-form-label">COLLAR SHAPE-</div>
+          <div class="collar-form-input">
+            <select class="collar-form-input-text">
+              <option value="">Select Collar Shape</option>
+              <option value="ROUND">ROUND</option>
+              <option value="RECTANGLE">RECTANGLE</option>
+              <option value="SQUARE">SQUARE</option>
+              <option value="LOOSE COLLAR">LOOSE COLLAR</option>
+            </select>
+          </div>
+        </div>
+        <div class="collar-form-row">
+          <div class="collar-form-label">COLLAR A SIZE-</div>
+          <div class="collar-form-input">
+            <select id="collarSize" class="collar-form-input-text">
+              <option value="">Select Collar A Size</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="2.5">2.5</option>
+              <option value="3">3</option>
+              <option value="3.5">3.5</option>
+              <option value="3.75">3.75</option>
+              <option value="4">4</option>
+              <option value="4.5">4.5</option>
+              <option value="4.75">4.75</option>
+              <option value="5">5</option>
+              <option value="5.5">5.5</option>
+              <option value="6">6</option>
+              <option value="6.5">6.5</option>
+              <option value="7">7</option>
+              <option value="7.25">7.25</option>
+              <option value="8">8</option>
+              <option value="8.25">8.25</option>
+              <option value="8.5">8.5</option>
+              <option value="8.75">8.75</option>
+              <option value="9">9</option>
+              <option value="9.5">9.5</option>
+              <option value="10">10</option>
+              <option value="10.5">10.5</option>
+              <option value="11">11</option>
+              <option value="11.5">11.5</option>
+              <option value="12.25">12.25</option>
+              <option value="13">13</option>
+              <option value="13.5">13.5</option>
+              <option value="13.75">13.75</option>
+              <option value="14">14</option>
+              <option value="14.25">14.25</option>
+              <option value="14.5">14.5</option>
+              <option value="15">15</option>
+              <option value="15.5">15.5</option>
+              <option value="16.25">16.25</option>
+              <option value="16.5">16.5</option>
+              <option value="17">17</option>
+              <option value="18.75">18.75</option>
+              <option value="12.5 X 16.5">12.5 X 16.5</option>
+              <option value="13 X 17">13 X 17</option>
+            </select>
+          </div>
+        </div>
+        <div class="collar-form-row">
+          <div class="collar-form-label">COLLAR B SIZE-</div>
+          <div class="collar-form-input">
+            <select class="collar-form-input-text">
+              <option value="">Select Collar B Size</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="2.5">2.5</option>
+              <option value="3">3</option>
+              <option value="3.5">3.5</option>
+              <option value="3.75">3.75</option>
+              <option value="4">4</option>
+              <option value="4.5">4.5</option>
+              <option value="4.75">4.75</option>
+              <option value="5">5</option>
+              <option value="5.5">5.5</option>
+              <option value="6">6</option>
+              <option value="6.5">6.5</option>
+              <option value="7">7</option>
+              <option value="7.25">7.25</option>
+              <option value="8">8</option>
+              <option value="8.25">8.25</option>
+              <option value="8.5">8.5</option>
+              <option value="8.75">8.75</option>
+              <option value="9">9</option>
+              <option value="9.5">9.5</option>
+              <option value="10">10</option>
+              <option value="10.5">10.5</option>
+              <option value="11">11</option>
+              <option value="11.5">11.5</option>
+              <option value="12.25">12.25</option>
+              <option value="13">13</option>
+              <option value="13.5">13.5</option>
+              <option value="13.75">13.75</option>
+              <option value="14">14</option>
+              <option value="14.25">14.25</option>
+              <option value="14.5">14.5</option>
+              <option value="15">15</option>
+              <option value="15.5">15.5</option>
+              <option value="16.25">16.25</option>
+              <option value="16.5">16.5</option>
+              <option value="17">17</option>
+              <option value="18.75">18.75</option>
+              <option value="12.5 X 16.5">12.5 X 16.5</option>
+              <option value="13 X 17">13 X 17</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Collar A Location Section -->
+        <div class="collar-location-container">
+          <div class="collar-section-header">COLLAR A LOCATION</div>
+          <div class="collar-form-row">
+            <div class="collar-form-label">SIDE A1 TO COLLAR-</div>
+            <div class="collar-form-input">
+              <input class="collar-form-input-text" type="text" />
+            </div>
+          </div>
+          <div class="collar-form-row">
+            <div class="collar-form-label">SIDE A2 TO COLLAR-</div>
+            <div class="collar-form-input">
+              <input class="collar-form-input-text" type="text" />
+            </div>
+          </div>
+          <div class="collar-form-row">
+            <div class="collar-form-label">SIDE A3 TO COLLAR-</div>
+            <div class="collar-form-input">
+              <input class="collar-form-input-text" type="text" />
+            </div>
+          </div>
+          <div class="collar-form-row">
+            <div class="collar-form-label">SIDE A4 TO COLLAR-</div>
+            <div class="collar-form-input">
+              <input class="collar-form-input-text" type="text" />
+            </div>
+          </div>
+          <div class="collar-short-long-row">
+            <div class="collar-short-long-cell">SHORT-</div>
+            <input class="collar-short-long-input-SHORT" type="text" />
+            <div class="collar-short-long-cell">LONG-</div>
+            <input class="collar-short-long-input-LONG" type="text" />
+          </div>
+        </div>
+
+        <!-- Collar B Location Section -->
+        <div class="collar-location-container">
+          <div class="collar-section-header">COLLAR B LOCATION</div>
+          <div class="collar-form-row">
+            <div class="collar-form-label">SIDE B1 TO COLLAR-</div>
+            <div class="collar-form-input">
+              <input class="collar-form-input-text" type="text" />
+            </div>
+          </div>
+          <div class="collar-form-row">
+            <div class="collar-form-label">SIDE B2 TO COLLAR-</div>
+            <div class="collar-form-input">
+              <input class="collar-form-input-text" type="text" />
+            </div>
+          </div>
+          <div class="collar-form-row">
+            <div class="collar-form-label">SIDE B3 TO COLLAR-</div>
+            <div class="collar-form-input">
+              <input class="collar-form-input-text" type="text" />
+            </div>
+          </div>
+          <div class="collar-form-row">
+            <div class="collar-form-label">SIDE B4 TO COLLAR-</div>
+            <div class="collar-form-input">
+              <input class="collar-form-input-text" type="text" />
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="content-section">
-        <div id="note-section"></div>
-        <script>
-          fetch("sections/NoteSection.html")
-            .then((response) => response.text())
-            .then((data) => {
-              document.getElementById("note-section").innerHTML = data;
-            })
-            .catch((error) => console.error("Error loading section:", error));
-        </script>
+        <div id="note-section" class="form-container">
+          <div class="header">NOTES</div>
+          <div class="yellow-row form-input">
+            <input class="form-input-text" type="text" />
+          </div>
+          <div class="pink-row form-input">
+            <select class="form-input-text">
+              <option value="">Select Chase Cover</option>
+              <option value="1-24 BLACK CHASE COVER">
+                1- 24 BLACK CHASE COVER
+              </option>
+              <option value="1-24 BROWN CHASE COVER">
+                1- 24 BROWN CHASE COVER
+              </option>
+              <option value="1-24 DARK BRONZE CHASE COVER">
+                1- 24 DARK BRONZE CHASE COVER
+              </option>
+              <option value="1-24 STAINLESS CHASE COVER">
+                1- 24 STAINLESS CHASE COVER
+              </option>
+              <option value="1- COPPER CHASE COVER">
+                1- COPPER CHASE COVER
+              </option>
+              <option value="1-24 WHITE CHASE COVER">
+                1- 24 WHITE CHASE COVER
+              </option>
+              <option value="1-24 PRIMER CHASE COVER">
+                1- 24 PRIMER CHASE COVER
+              </option>
+              <option value="1-24 GALVANIZED CHASE COVER">
+                1- 24 GALVANIZED CHASE COVER
+              </option>
+              <option value="1-22 BLACK CHASE COVER">
+                1 - 22 BLACK CHASE COVER
+              </option>
+            </select>
+          </div>
+          <div class="pink-row form-input">
+            <input class="form-input-text" type="text" />
+          </div>
+          <div class="white-row form-input">
+            <input class="form-input-text" type="text" />
+          </div>
+
+          <div class="sections-row">
+            <div class="section-label">CHASE COVER<br />SECTIONS</div>
+            <div class="section-cell">
+              <select class="form-input-text" id="chaseCover">
+                <option value="">Select Option</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="N/A">N/A</option>
+              </select>
+            </div>
+            <div class="section-cell">
+              <input class="form-input-text" type="text" />
+            </div>
+          </div>
+
+          <div class="sections-row">
+            <div class="section-label">STANDING SEAMS</div>
+
+            <div class="section-cell">
+              <input
+                class="form-input-text"
+                type="text"
+                id="standingSeams1"
+                readonly />
+            </div>
+
+            <div class="section-cell">
+              <input
+                class="form-input-text"
+                type="text"
+                id="standingSeams2"
+                readonly />
+            </div>
+
+            <div class="section-cell">
+              <input
+                class="form-input-text"
+                type="text"
+                id="standingSeams3"
+                readonly />
+            </div>
+          </div>
+
+          <div class="stock-row">
+            <div class="stock-label">1-CHASE COVER STOCK SIZE-</div>
+            <div class="x-mark">
+              <input
+                class="form-input-text"
+                placeholder="X"
+                type="text"
+                style="text-align: center" />
+            </div>
+          </div>
+
+          <div class="stock-row">
+            <div class="stock-label">2-STANDING COLLAR A STOCK SIZE-</div>
+            <div class="x-mark">
+              <input
+                id="stockSize"
+                readonly
+                class="form-input-text"
+                placeholder="X"
+                type="text"
+                style="text-align: center" />
+            </div>
+          </div>
+          <!-- <script>
+            function updateStockSize() {
+              let selectedValue = localStorage.getItem("selectedCollarSize");
+    
+              if (!selectedValue) {
+                document.getElementById("stockSize").value = "";
+                return;
+              }
+    
+              let numValue = parseFloat(selectedValue);
+              if (isNaN(numValue)) {
+                document.getElementById("stockSize").value = "Invalid";
+                return;
+              }
+    
+              let result = mround(numValue * 3.14159 + 0.5, 0.0625);
+              document.getElementById("stockSize").value = result.toFixed(4);
+            }
+    
+            function mround(value, multiple) {
+              return Math.round(value / multiple) * multiple;
+            }
+    
+            // Update the stock size when the input page loads
+            updateStockSize();
+    
+            // Listen for updates from the dropdown page
+            window.addEventListener("collarSizeUpdated", updateStockSize);
+          </script> -->
+          <div class="stock-row">
+            <div class="stock-label">2-STANDING COLLAR B STOCK SIZE-</div>
+            <div class="x-mark">
+              <input
+                class="form-input-text"
+                placeholder="X"
+                type="text"
+                style="text-align: center" />
+            </div>
+          </div>
+
+          <div class="stock-row">
+            <div class="stock-label">3-STORM COLLAR A STOCK SIZE-</div>
+            <div class="x-mark">
+              <input
+                class="form-input-text"
+                placeholder="X"
+                type="text"
+                style="text-align: center" />
+            </div>
+          </div>
+
+          <div class="stock-row">
+            <div class="stock-label">3-STORM COLLAR B STOCK SIZE-</div>
+            <div class="x-mark">
+              <input
+                class="form-input-text"
+                placeholder="X"
+                type="text"
+                style="text-align: center" />
+            </div>
+          </div>
+
+          <!-- Numbers Row -->
+          <div class="row">
+            <div class="number-cell">1</div>
+            <div class="number-cell">2</div>
+            <div class="number-cell">3</div>
+            <div class="total-sq-cell-1"></div>
+          </div>
+
+          <!-- Empty Row with Total Sq. Ft. -->
+          <div class="row">
+            <div class="empty-cell">
+              <input
+                class="form-input-text"
+                type="text"
+                style="text-align: center" />
+            </div>
+            <div class="empty-cell">
+              <input
+                class="form-input-text"
+                type="text"
+                style="text-align: center" />
+            </div>
+            <div class="empty-cell">
+              <input
+                class="form-input-text"
+                type="text"
+                style="text-align: center" />
+            </div>
+            <div class="total-sq-cell">
+              TOTAL SQ. FT.
+              <input
+                class="form-input-text"
+                type="text"
+                style="margin-left: 10px" />
+            </div>
+          </div>
+
+          <!-- Bottom Row with Solder and Total Cost -->
+          <div class="row">
+            <div class="solder-cell">SOLDER</div>
+            <div class="solder-cell-input">
+              <input class="form-input-text" type="text" />
+            </div>
+            <div class="total-cost-cell">TOTAL COST</div>
+            <div class="yellow-cell">
+              <input class="form-input-text" type="text" />
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <br />
 
     <div class="container">
-      <div id="storm-section"></div>
-      <script>
-        fetch("sections/StormSection.html")
-          .then((response) => response.text())
-          .then((data) => {
-            document.getElementById("storm-section").innerHTML = data;
-          })
-          .catch((error) => console.error("Error loading section:", error));
-      </script>
+      <div class="storm-form-container">
+        <!-- Storm Collars Row -->
+        <div class="storm-form-row">
+          <div class="storm-label">STORM COLLARS-</div>
+          <div class="storm-input-area">
+            <div class="storm-yes-no-labels">
+              <span>YES</span>
+              <span>NO</span>
+            </div>
+            <div class="storm-checkbox-container">
+              <input type="checkbox" class="storm-checkbox-yes" />
+              <input type="checkbox" class="storm-checkbox-no" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Pipe Size A Row -->
+        <div class="storm-form-row">
+          <div class="storm-label">PIPE SIZE A-</div>
+          <div class="storm-input-area">
+            <select class="storm-form-form-input-text">
+              <option value="">Select Pipe Size</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="2.5">2.5</option>
+              <option value="3">3</option>
+              <option value="3.5">3.5</option>
+              <option value="3.75">3.75</option>
+              <option value="4">4</option>
+              <option value="4.5">4.5</option>
+              <option value="4.75">4.75</option>
+              <option value="5">5</option>
+              <option value="5.5">5.5</option>
+              <option value="6">6</option>
+              <option value="6.5">6.5</option>
+              <option value="7">7</option>
+              <option value="7.25">7.25</option>
+              <option value="8">8</option>
+              <option value="8.25">8.25</option>
+              <option value="8.5">8.5</option>
+              <option value="8.75">8.75</option>
+              <option value="9">9</option>
+              <option value="9.5">9.5</option>
+              <option value="10">10</option>
+              <option value="10.5">10.5</option>
+              <option value="11">11</option>
+              <option value="11.5">11.5</option>
+              <option value="12.25">12.25</option>
+              <option value="13">13</option>
+              <option value="13.5">13.5</option>
+              <option value="13.75">13.75</option>
+              <option value="14">14</option>
+              <option value="14.25">14.25</option>
+              <option value="14.5">14.5</option>
+              <option value="15">15</option>
+              <option value="15.5">15.5</option>
+              <option value="16.25">16.25</option>
+              <option value="16.5">16.5</option>
+              <option value="17">17</option>
+              <option value="18.75">18.75</option>
+              <option value="12.5 X 16.5">12.5 X 16.5</option>
+              <option value="13 X 17">13 X 17</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Pipe Size B Row -->
+        <div class="storm-form-row">
+          <div class="storm-label">PIPE SIZE B-</div>
+          <div class="storm-input-area">
+            <select class="storm-form-form-input-text">
+              <option value="">Select Pipe Size</option>
+              <option value="1">1.000</option>
+              <option value="2">2.000</option>
+              <option value="2.5">2.500</option>
+              <option value="3">3.000</option>
+              <option value="3.5">3.500</option>
+              <option value="3.75">3.750</option>
+              <option value="4">4.000</option>
+              <option value="4.5">4.500</option>
+              <option value="4.75">4.750</option>
+              <option value="5">5.000</option>
+              <option value="5.5">5.500</option>
+              <option value="6">6.000</option>
+              <option value="6.5">6.500</option>
+              <option value="7">7.000</option>
+              <option value="7.25">7.250</option>
+              <option value="8">8.000</option>
+              <option value="8.25">8.250</option>
+              <option value="8.5">8.500</option>
+              <option value="8.75">8.750</option>
+              <option value="9">9.000</option>
+              <option value="9.5">9.500</option>
+              <option value="10">10.000</option>
+              <option value="10.5">10.500</option>
+              <option value="11">11.000</option>
+              <option value="11.5">11.500</option>
+              <option value="12.25">12.250</option>
+              <option value="13">13.000</option>
+              <option value="13.5">13.500</option>
+              <option value="13.75">13.750</option>
+              <option value="14">14.000</option>
+              <option value="14.25">14.250</option>
+              <option value="14.5">14.500</option>
+              <option value="15">15.000</option>
+              <option value="15.5">15.500</option>
+              <option value="16.25">16.250</option>
+              <option value="16.5">16.500</option>
+              <option value="17">17.000</option>
+              <option value="18.75">18.750</option>
+              <option value="12.5 X 16.5">12.500 X 16.500</option>
+              <option value="13 X 17">13.000 X 17.000</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- S.C. Flange Row -->
+        <div class="storm-form-row">
+          <div class="storm-label">S.C. FLANGE-</div>
+          <div class="storm-input-area">
+            <select class="storm-form-form-input-text">
+              <option value="">Select S.C. FLANGE</option>
+              <option value="1">1.00</option>
+              <option value="2">2.00</option>
+              <option value="2.5">2.00</option>
+              <option value="3">3.00</option>
+              <option value="3.5">3.50</option>
+              <option value="3.75">3.75</option>
+              <option value="4">4.00</option>
+              <option value="4.5">4.50</option>
+              <option value="4.75">4.75</option>
+              <option value="5">5.00</option>
+              <option value="5.5">5.50</option>
+              <option value="6">6.00</option>
+              <option value="6.5">6.50</option>
+              <option value="7">7.00</option>
+              <option value="7.25">7.25</option>
+              <option value="8">8.00</option>
+              <option value="8.25">8.25</option>
+              <option value="8.5">8.50</option>
+              <option value="8.75">8.75</option>
+              <option value="9">9.00</option>
+              <option value="9.5">9.50</option>
+              <option value="10">10.00</option>
+              <option value="10.5">10.50</option>
+              <option value="11">11.00</option>
+              <option value="11.5">11.50</option>
+              <option value="12.25">12.25</option>
+              <option value="13">13.00</option>
+              <option value="13.5">13.50</option>
+              <option value="13.75">13.75</option>
+              <option value="14">14.00</option>
+              <option value="14.25">14.25</option>
+              <option value="14.5">14.50</option>
+              <option value="15">15.00</option>
+              <option value="15.5">15.50</option>
+              <option value="16.25">16.25</option>
+              <option value="16.5">16.50</option>
+              <option value="17">17.00</option>
+              <option value="18.75">18.75</option>
+              <option value="12.5 X 16.5">12.50 X 16.50</option>
+              <option value="13 X 17">13.00 X 17.00</option>
+            </select>
+          </div>
+        </div>
+      </div>
 
       <br />
-      <div id="loose-collars-section"></div>
-      <script>
-        fetch("sections/LOOSECOLLARS.html")
-          .then((response) => response.text())
-          .then((data) => {
-            document.getElementById("loose-collars-section").innerHTML = data;
-          })
-          .catch((error) => console.error("Error loading section:", error));
-      </script>
+      <div id="loose-collars-section" class="loose-collars-container">
+        <div class="loose-collars-row">
+          <div class="loose-collars-label">LOOSE COLLARS-</div>
+          <div class="loose-collars-input-area">
+            <div class="loose-collars-yes-no-labels">
+              <span>YES</span>
+              <span>NO</span>
+            </div>
+            <div class="loose-collars-checkbox-container">
+              <input type="checkbox" class="loose-collars-checkbox-yes" />
+              <input type="checkbox" class="loose-collars-checkbox-no" />
+            </div>
+          </div>
+        </div>
+
+        <div class="loose-collars-row">
+          <div class="loose-collars-label">CORNER BOLTS-</div>
+          <div class="loose-collars-input-area">
+            <div class="loose-collars-yes-no-labels">
+              <span>YES</span>
+              <span>NO</span>
+            </div>
+            <div class="loose-collars-checkbox-container">
+              <input type="checkbox" class="loose-collars-checkbox-yes" />
+              <input type="checkbox" class="loose-collars-checkbox-no" />
+            </div>
+          </div>
+        </div>
+
+        <div class="loose-collars-row">
+          <div class="loose-collars-label">HOSE CLAMPS-</div>
+          <div class="loose-collars-input-area">
+            <div class="loose-collars-yes-no-labels">
+              <span>YES</span>
+              <span>NO</span>
+            </div>
+            <div class="loose-collars-checkbox-container">
+              <input type="checkbox" class="loose-collars-checkbox-yes" />
+              <input type="checkbox" class="loose-collars-checkbox-no" />
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+    <div class="parent-container">
+      <div class="custom-form-container-x7y9z">
+        <table class="custom-form-table-x7y9z">
+          <tr class="custom-form-header-row-x7y9z">
+            <td></td>
+            <td class="custom-form-input-cell-x7y9z"><input type="text" /></td>
+          </tr>
+          <tr>
+            <td class="custom-form-label-cell-x7y9z">
+              TOTAL $ PER SQ FT+$135.00=
+            </td>
+            <td class="custom-form-input-cell-x7y9z"><input type="text" /></td>
+          </tr>
+          <tr>
+            <td class="custom-form-label-cell-x7y9z">INSTALL COLLARS=</td>
+            <td class="custom-form-input-cell-x7y9z"><input type="text" /></td>
+          </tr>
+          <tr>
+            <td class="custom-form-label-cell-x7y9z">2 PIECE CHASE COVER=</td>
+            <td class="custom-form-input-cell-x7y9z"><input type="text" /></td>
+          </tr>
+          <tr>
+            <td class="custom-form-label-cell-x7y9z">3 PIECE CHASE COVER=</td>
+            <td class="custom-form-input-cell-x7y9z"><input type="text" /></td>
+          </tr>
+          <tr>
+            <td class="custom-form-label-cell-x7y9z">STORM COLLARS=</td>
+            <td class="custom-form-input-cell-x7y9z"><input type="text" /></td>
+          </tr>
+          <tr>
+            <td class="custom-form-label-cell-x7y9z">
+              TOTAL PRE PAINTED AND GALV. CAULKED-
+            </td>
+            <td
+              class="custom-form-input-cell-x7y9z custom-form-highlighted-x7y9z">
+              <input type="text" placeholder="$0.00" />
+            </td>
+          </tr>
+          <tr>
+            <td class="custom-form-label-cell-x7y9z">
+              TOTAL STAINLESS + $50.00 SOLDERED-
+            </td>
+            <td class="custom-form-input-cell-x7y9z"><input type="text" /></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div>
+      <div id="image-section" class="image-form-container">
+        <div class="image-header">
+          <img
+            src="imgs/1.png"
+            alt="Rusch and Son Metalfab Logo"
+            class="image"
+            loading="lazy" />
+          <img
+            src="imgs/2.jpg"
+            alt="Rusch and Son Metalfab Logo"
+            class="image"
+            loading="lazy" />
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
   </body>
 </html>
