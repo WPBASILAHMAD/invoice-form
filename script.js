@@ -103,4 +103,4 @@ function updateStockSizeB() {
 // ✅ MROUND function (Excel-like rounding)
 function mround(value, multiple) {
   return Math.round(value / multiple) * multiple;
-}
+ }
