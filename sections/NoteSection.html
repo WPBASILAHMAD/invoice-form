@@ -179,7 +179,34 @@
         <input class="form-input-text" type="text" />
       </div>
       <div class="pink-row form-input">
-        <input class="form-input-text" type="text" />
+        <select class="form-input-text">
+          <option value="">Select Chase Cover</option>
+          <option value="1-24 BLACK CHASE COVER">
+            1- 24 BLACK CHASE COVER
+          </option>
+          <option value="1-24 BROWN CHASE COVER">
+            1- 24 BROWN CHASE COVER
+          </option>
+          <option value="1-24 DARK BRONZE CHASE COVER">
+            1- 24 DARK BRONZE CHASE COVER
+          </option>
+          <option value="1-24 STAINLESS CHASE COVER">
+            1- 24 STAINLESS CHASE COVER
+          </option>
+          <option value="1- COPPER CHASE COVER">1- COPPER CHASE COVER</option>
+          <option value="1-24 WHITE CHASE COVER">
+            1- 24 WHITE CHASE COVER
+          </option>
+          <option value="1-24 PRIMER CHASE COVER">
+            1- 24 PRIMER CHASE COVER
+          </option>
+          <option value="1-24 GALVANIZED CHASE COVER">
+            1- 24 GALVANIZED CHASE COVER
+          </option>
+          <option value="1-22 BLACK CHASE COVER">
+            1 - 22 BLACK CHASE COVER
+          </option>
+        </select>
       </div>
       <div class="pink-row form-input">
         <input class="form-input-text" type="text" />
@@ -191,7 +218,17 @@
       <div class="sections-row">
         <div class="section-label">CHASE COVER<br />SECTIONS</div>
         <div class="section-cell">
-          <input class="form-input-text" type="text" />
+          <select
+            class="form-input-text"
+            id="chaseCover"
+            onchange="updateFields()">
+            <option value="">Select Option</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="N/A">N/A</option>
+          </select>
         </div>
         <div class="section-cell">
           <input class="form-input-text" type="text" />
@@ -200,14 +237,29 @@
 
       <div class="sections-row">
         <div class="section-label">STANDING SEAMS</div>
+
         <div class="section-cell">
-          <input class="form-input-text" type="text" />
+          <input
+            class="form-input-text"
+            type="text"
+            id="standingSeams1"
+            readonly />
         </div>
+
         <div class="section-cell">
-          <input class="form-input-text" type="text" />
+          <input
+            class="form-input-text"
+            type="text"
+            id="standingSeams2"
+            readonly />
         </div>
+
         <div class="section-cell">
-          <input class="form-input-text" type="text" />
+          <input
+            class="form-input-text"
+            type="text"
+            id="standingSeams3"
+            readonly />
         </div>
       </div>
 
@@ -226,13 +278,43 @@
         <div class="stock-label">2-STANDING COLLAR A STOCK SIZE-</div>
         <div class="x-mark">
           <input
+            id="stockSize"
+            readonly
             class="form-input-text"
             placeholder="X"
             type="text"
             style="text-align: center" />
         </div>
       </div>
+      <script>
+        function updateStockSize() {
+          let selectedValue = localStorage.getItem("selectedCollarSize");
 
+          if (!selectedValue) {
+            document.getElementById("stockSize").value = "";
+            return;
+          }
+
+          let numValue = parseFloat(selectedValue);
+          if (isNaN(numValue)) {
+            document.getElementById("stockSize").value = "Invalid";
+            return;
+          }
+
+          let result = mround(numValue * 3.14159 + 0.5, 0.0625);
+          document.getElementById("stockSize").value = result.toFixed(4);
+        }
+
+        function mround(value, multiple) {
+          return Math.round(value / multiple) * multiple;
+        }
+
+        // Update the stock size when the input page loads
+        updateStockSize();
+
+        // Listen for updates from the dropdown page
+        window.addEventListener("collarSizeUpdated", updateStockSize);
+      </script>
       <div class="stock-row">
         <div class="stock-label">2-STANDING COLLAR B STOCK SIZE-</div>
         <div class="x-mark">
@@ -315,5 +397,52 @@
         </div>
       </div>
     </div>
+    <script>
+      function updateFields() {
+        let dropdownValue = document.getElementById("chaseCover").value;
+        let standingSeams1 = document.getElementById("standingSeams1");
+        let standingSeams2 = document.getElementById("standingSeams2");
+        let standingSeams3 = document.getElementById("standingSeams3");
+
+        if (dropdownValue === "" || dropdownValue === "N/A") {
+          standingSeams1.value = "";
+          standingSeams2.value = "";
+          standingSeams3.value = "";
+          return;
+        }
+
+        let H20 = parseInt(dropdownValue);
+        if (isNaN(H20)) {
+          standingSeams1.value = "Invalid";
+          return;
+        }
+
+        let H21 = H20 - 1;
+        standingSeams1.value = H21; // First field update (H20 - 1)
+
+        let J8 = 100; // Assume J8 is a fixed value (modify as needed)
+        let result = "";
+
+        // Apply the complex formula logic
+        if (H21 === 1) {
+          result = mround((4 * J8) / 144, 0.1);
+        } else if (H21 === 2) {
+          result = mround((8 * J8) / 144, 0.1);
+        } else if (H21 === 3) {
+          result = mround((12 * J8) / 144, 0.1);
+        } else if (H21 === 4) {
+          result = mround((16 * J8) / 144, 0.1);
+        }
+
+        standingSeams2.value = result !== "" ? result.toFixed(2) : "";
+
+        // Update third field
+        standingSeams3.value = H21 !== "" ? "A = 2 In. X" : "";
+      }
+
+      function mround(value, multiple) {
+        return Math.round(value / multiple) * multiple;
+      }
+    </script>
   </body>
 </html>

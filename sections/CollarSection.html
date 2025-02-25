@@ -129,19 +129,109 @@
       <div class="collar-form-row">
         <div class="collar-form-label">COLLAR SHAPE-</div>
         <div class="collar-form-input">
-          <input class="collar-form-input-text" type="text" />
+          <select class="collar-form-input-text">
+            <option value="">Select Collar Shape</option>
+            <option value="ROUND">ROUND</option>
+            <option value="RECTANGLE">RECTANGLE</option>
+            <option value="SQUARE">SQUARE</option>
+            <option value="LOOSE COLLAR">LOOSE COLLAR</option>
+          </select>
         </div>
       </div>
       <div class="collar-form-row">
         <div class="collar-form-label">COLLAR A SIZE-</div>
         <div class="collar-form-input">
-          <input class="collar-form-input-text" type="text" />
+          <select id="collarSize" class="collar-form-input-text">
+            <option value="">Select Collar A Size</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="2.5">2.5</option>
+            <option value="3">3</option>
+            <option value="3.5">3.5</option>
+            <option value="3.75">3.75</option>
+            <option value="4">4</option>
+            <option value="4.5">4.5</option>
+            <option value="4.75">4.75</option>
+            <option value="5">5</option>
+            <option value="5.5">5.5</option>
+            <option value="6">6</option>
+            <option value="6.5">6.5</option>
+            <option value="7">7</option>
+            <option value="7.25">7.25</option>
+            <option value="8">8</option>
+            <option value="8.25">8.25</option>
+            <option value="8.5">8.5</option>
+            <option value="8.75">8.75</option>
+            <option value="9">9</option>
+            <option value="9.5">9.5</option>
+            <option value="10">10</option>
+            <option value="10.5">10.5</option>
+            <option value="11">11</option>
+            <option value="11.5">11.5</option>
+            <option value="12.25">12.25</option>
+            <option value="13">13</option>
+            <option value="13.5">13.5</option>
+            <option value="13.75">13.75</option>
+            <option value="14">14</option>
+            <option value="14.25">14.25</option>
+            <option value="14.5">14.5</option>
+            <option value="15">15</option>
+            <option value="15.5">15.5</option>
+            <option value="16.25">16.25</option>
+            <option value="16.5">16.5</option>
+            <option value="17">17</option>
+            <option value="18.75">18.75</option>
+            <option value="12.5 X 16.5">12.5 X 16.5</option>
+            <option value="13 X 17">13 X 17</option>
+          </select>
         </div>
       </div>
       <div class="collar-form-row">
         <div class="collar-form-label">COLLAR B SIZE-</div>
         <div class="collar-form-input">
-          <input class="collar-form-input-text" type="text" />
+          <select class="collar-form-input-text">
+            <option value="">Select Collar B Size</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="2.5">2.5</option>
+            <option value="3">3</option>
+            <option value="3.5">3.5</option>
+            <option value="3.75">3.75</option>
+            <option value="4">4</option>
+            <option value="4.5">4.5</option>
+            <option value="4.75">4.75</option>
+            <option value="5">5</option>
+            <option value="5.5">5.5</option>
+            <option value="6">6</option>
+            <option value="6.5">6.5</option>
+            <option value="7">7</option>
+            <option value="7.25">7.25</option>
+            <option value="8">8</option>
+            <option value="8.25">8.25</option>
+            <option value="8.5">8.5</option>
+            <option value="8.75">8.75</option>
+            <option value="9">9</option>
+            <option value="9.5">9.5</option>
+            <option value="10">10</option>
+            <option value="10.5">10.5</option>
+            <option value="11">11</option>
+            <option value="11.5">11.5</option>
+            <option value="12.25">12.25</option>
+            <option value="13">13</option>
+            <option value="13.5">13.5</option>
+            <option value="13.75">13.75</option>
+            <option value="14">14</option>
+            <option value="14.25">14.25</option>
+            <option value="14.5">14.5</option>
+            <option value="15">15</option>
+            <option value="15.5">15.5</option>
+            <option value="16.25">16.25</option>
+            <option value="16.5">16.5</option>
+            <option value="17">17</option>
+            <option value="18.75">18.75</option>
+            <option value="12.5 X 16.5">12.5 X 16.5</option>
+            <option value="13 X 17">13 X 17</option>
+          </select>
         </div>
       </div>
 
@@ -209,5 +299,15 @@
         </div>
       </div>
     </div>
+
+    <script>
+      document
+        .getElementById("collarSize")
+        .addEventListener("change", function () {
+          let selectedValue = this.value;
+          localStorage.setItem("selectedCollarSize", selectedValue); // Store the value
+          window.dispatchEvent(new Event("collarSizeUpdated")); // Notify other files
+        });
+    </script>
   </body>
 </html>
