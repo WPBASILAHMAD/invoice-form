@@ -284,7 +284,7 @@
         <div class="collar-form-row">
           <div class="collar-form-label">COLLAR A SIZE-</div>
           <div class="collar-form-input">
-            <select id="collarSize" class="collar-form-input-text">
+            <select id="collarSizeA" class="collar-form-input-text">
               <option value="">Select Collar A Size</option>
               <option value="1">1</option>
               <option value="2">2</option>
@@ -332,7 +332,7 @@
         <div class="collar-form-row">
           <div class="collar-form-label">COLLAR B SIZE-</div>
           <div class="collar-form-input">
-            <select class="collar-form-input-text">
+            <select class="collar-form-input-text" id="collarSizeB">
               <option value="">Select Collar B Size</option>
               <option value="1">1</option>
               <option value="2">2</option>
@@ -547,7 +547,7 @@
             <div class="stock-label">2-STANDING COLLAR A STOCK SIZE-</div>
             <div class="x-mark">
               <input
-                id="stockSize"
+                id="stockSizeA"
                 readonly
                 class="form-input-text"
                 placeholder="X"
@@ -555,39 +555,12 @@
                 style="text-align: center" />
             </div>
           </div>
-          <!-- <script>
-            function updateStockSize() {
-              let selectedValue = localStorage.getItem("selectedCollarSize");
-    
-              if (!selectedValue) {
-                document.getElementById("stockSize").value = "";
-                return;
-              }
-    
-              let numValue = parseFloat(selectedValue);
-              if (isNaN(numValue)) {
-                document.getElementById("stockSize").value = "Invalid";
-                return;
-              }
-    
-              let result = mround(numValue * 3.14159 + 0.5, 0.0625);
-              document.getElementById("stockSize").value = result.toFixed(4);
-            }
-    
-            function mround(value, multiple) {
-              return Math.round(value / multiple) * multiple;
-            }
-    
-            // Update the stock size when the input page loads
-            updateStockSize();
-    
-            // Listen for updates from the dropdown page
-            window.addEventListener("collarSizeUpdated", updateStockSize);
-          </script> -->
           <div class="stock-row">
             <div class="stock-label">2-STANDING COLLAR B STOCK SIZE-</div>
             <div class="x-mark">
               <input
+                readonly
+                id="stockSizeB"
                 class="form-input-text"
                 placeholder="X"
                 type="text"
