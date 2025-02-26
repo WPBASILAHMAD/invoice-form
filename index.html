@@ -130,16 +130,23 @@
             <div class="invoice-measurement-row">
               <div class="invoice-measurement-label">3) LONG SIDE-</div>
               <div class="invoice-form-input">
-                <input class="invoice-form-input-text" type="text" />
+                <input
+                  class="invoice-form-input-text"
+                  id="long_side"
+                  type="text" />
               </div>
             </div>
 
             <div class="invoice-measurement-row">
               <div class="invoice-measurement-label">4) SHORT SIDE-</div>
               <div class="invoice-form-input">
-                <input class="invoice-form-input-text" type="text" />
+                <input
+                  class="invoice-form-input-text"
+                  id="short_side"
+                  type="text" />
               </div>
             </div>
+            <script src="script.js"></script>
 
             <div class="invoice-measurement-row">
               <div class="invoice-measurement-label">COLLAR HEIGHT-</div>
@@ -381,35 +388,46 @@
         <!-- Collar A Location Section -->
         <div class="collar-location-container">
           <div class="collar-section-header">COLLAR A LOCATION</div>
+
           <div class="collar-form-row">
             <div class="collar-form-label">SIDE A1 TO COLLAR-</div>
             <div class="collar-form-input">
-              <input class="collar-form-input-text" type="text" />
+              <input class="collar-form-input-text" type="text" id="A1" />
             </div>
           </div>
           <div class="collar-form-row">
             <div class="collar-form-label">SIDE A2 TO COLLAR-</div>
             <div class="collar-form-input">
-              <input class="collar-form-input-text" type="text" />
+              <input class="collar-form-input-text" type="text" id="A2" />
             </div>
           </div>
           <div class="collar-form-row">
             <div class="collar-form-label">SIDE A3 TO COLLAR-</div>
             <div class="collar-form-input">
-              <input class="collar-form-input-text" type="text" />
+              <input class="collar-form-input-text" type="text" id="A3" />
             </div>
           </div>
           <div class="collar-form-row">
             <div class="collar-form-label">SIDE A4 TO COLLAR-</div>
             <div class="collar-form-input">
-              <input class="collar-form-input-text" type="text" />
+              <input class="collar-form-input-text" type="text" id="A4" />
             </div>
           </div>
+
           <div class="collar-short-long-row">
             <div class="collar-short-long-cell">SHORT-</div>
-            <input class="collar-short-long-input-SHORT" type="text" />
+            <input
+              class="collar-short-long-input-SHORT"
+              type="text"
+              id="SHORT"
+              readonly />
+
             <div class="collar-short-long-cell">LONG-</div>
-            <input class="collar-short-long-input-LONG" type="text" />
+            <input
+              class="collar-short-long-input-LONG"
+              type="text"
+              id="LONG"
+              readonly />
           </div>
         </div>
 
@@ -868,33 +886,55 @@
             <td class="custom-form-label-cell-x7y9z">
               TOTAL $ PER SQ FT+$135.00=
             </td>
-            <td class="custom-form-input-cell-x7y9z"><input type="text" /></td>
+            <td class="custom-form-input-cell-x7y9z">
+              <input type="text" id="total_per_sq_ft" />
+            </td>
           </tr>
           <tr>
-            <td class="custom-form-label-cell-x7y9z">INSTALL COLLARS=</td>
-            <td class="custom-form-input-cell-x7y9z"><input type="text" /></td>
+            <td class="custom-form-label-cell-x7y9z" id="install_collars_label">
+              INSTALL COLLARS=
+            </td>
+            <td class="custom-form-input-cell-x7y9z">
+              <input type="text" id="install_collars" />
+            </td>
           </tr>
+          <script src="script.js"></script>
+
           <tr>
             <td class="custom-form-label-cell-x7y9z">2 PIECE CHASE COVER=</td>
-            <td class="custom-form-input-cell-x7y9z"><input type="text" /></td>
+            <td class="custom-form-input-cell-x7y9z">
+              <input type="text" id="chase_cover" />
+            </td>
           </tr>
           <tr>
             <td class="custom-form-label-cell-x7y9z">3 PIECE CHASE COVER=</td>
-            <td class="custom-form-input-cell-x7y9z"><input type="text" /></td>
+            <td class="custom-form-input-cell-x7y9z">
+              <input type="text" id="three_piece_chase_cover" />
+            </td>
           </tr>
           <tr>
             <td class="custom-form-label-cell-x7y9z">STORM COLLARS=</td>
-            <td class="custom-form-input-cell-x7y9z"><input type="text" /></td>
+            <td class="custom-form-input-cell-x7y9z">
+              <input type="text" id="storm_collars" />
+            </td>
           </tr>
+          <script src="script.js"></script>
+
           <tr>
             <td class="custom-form-label-cell-x7y9z">
               TOTAL PRE PAINTED AND GALV. CAULKED-
             </td>
             <td
               class="custom-form-input-cell-x7y9z custom-form-highlighted-x7y9z">
-              <input type="text" placeholder="$0.00" />
+              <input
+                type="text"
+                id="total_pre_painted"
+                placeholder="$0.00"
+                readonly />
             </td>
           </tr>
+          <script src="script.js"></script>
+
           <tr>
             <td class="custom-form-label-cell-x7y9z">
               TOTAL STAINLESS + $50.00 SOLDERED-
@@ -924,11 +964,27 @@
       <div class="quote-calc-grid">
         <div class="quote-calc-total-sf">TOTAL S.F.</div>
         <div class="quote-calc-total-sf-input"><input type="text" /></div>
-        <div class="quote-calc-solder">SOLDER-</div>
-        <div class="quote-calc-solder-amount">$0.00</div>
+        <div class="quote-calc-solder" id="solder_label">SOLDER-</div>
+        <div class="quote-calc-solder-amount">
+          <div class="quote-solder">
+            <input
+              type="text"
+              placeholder="$0.00"
+              id="solder_amount"
+              readonly />
+          </div>
+        </div>
 
         <div class="quote-calc-material">MATERIAL-</div>
-        <div class="quote-calc-material-amount">$0.00</div>
+        <div class="quote-calc-material-amount">
+          <div class="quote-material">
+            <input
+              type="text"
+              id="material_amount"
+              placeholder="$0.00"
+              readonly />
+          </div>
+        </div>
 
         <div class="quote-calc-make-time">MAKE TIME-</div>
         <div class="quote-calc-value">#VALUE!</div>
@@ -936,7 +992,12 @@
         <div class="quote-calc-labor">LABOR-</div>
         <div class="quote-calc-labor-input"><input type="text" /></div>
 
-        <div class="quote-calc-quote-total">QUOTE TOTAL- $0.00</div>
+        <div class="quote-calc-quote-total">
+          QUOTE TOTAL-
+          <div class="quote-total">
+            <input type="text" id="quote_total" readonly />
+          </div>
+        </div>
         <div class="quote-calc-total-2">TOTAL-</div>
         <div class="quote-calc-total-input-2"><input type="text" /></div>
       </div>

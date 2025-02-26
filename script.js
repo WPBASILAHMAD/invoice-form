@@ -1,5 +1,24 @@
 /** @format */
 
+document.addEventListener("DOMContentLoaded", function () {
+  function updateMeasurements() {
+    const j7 = document.getElementById("j7");
+    const j8 = document.getElementById("j8");
+    const longSide = document.getElementById("long_side");
+    const shortSide = document.getElementById("short_side");
+
+    if (j7 && longSide) {
+      longSide.value = j7.value;
+    }
+    if (j8 && shortSide) {
+      shortSide.value = j8.value;
+    }
+  }
+
+  document.getElementById("j7")?.addEventListener("input", updateMeasurements);
+  document.getElementById("j8")?.addEventListener("input", updateMeasurements);
+});
+
 // Collar Size Selection
 document.getElementById("collarSize")?.addEventListener("change", function () {
   let selectedValue = this.value;
@@ -199,4 +218,270 @@ document.addEventListener("DOMContentLoaded", function () {
   document
     .getElementById("longField")
     .addEventListener("input", validateShortLongFields);
+});
+
+function calculateShortLong() {
+  let A1 = parseFloat(document.getElementById("A1").value) || 0;
+  let A2 = parseFloat(document.getElementById("A2").value) || 0;
+  let A3 = parseFloat(document.getElementById("A3").value) || 0;
+  let A4 = parseFloat(document.getElementById("A4").value) || 0;
+
+  let C19 = A1,
+    C20 = A2,
+    C21 = A3,
+    C22 = A4;
+  let C16 = 5,
+    C17 = 3,
+    C25 = 2,
+    C27 = 4,
+    C26 = 6,
+    C28 = 7;
+  let J7 = 20,
+    J8 = 15;
+
+  let shortField = document.getElementById("SHORT");
+  let longField = document.getElementById("LONG");
+
+  // SHORT Calculation
+  if (C19 === 0) {
+    shortField.value = "";
+    shortField.classList.remove("success", "error");
+  } else if (C19 + C21 + C16 !== J8) {
+    shortField.value = "ERROR A";
+    shortField.classList.remove("success");
+    shortField.classList.add("error");
+    console.error("SHORT - ERROR A: Calculation does not match J8");
+  } else {
+    shortField.value = "Correct";
+    shortField.classList.remove("error");
+    shortField.classList.add("success");
+    console.log("SHORT - Correct");
+  }
+
+  // LONG Calculation
+  if (C20 === 0) {
+    longField.value = "";
+    longField.classList.remove("success", "error");
+  } else if (C20 + C22 + C16 !== J7) {
+    longField.value = "ERROR A";
+    longField.classList.remove("success");
+    longField.classList.add("error");
+    console.error("LONG - ERROR A: Calculation does not match J7");
+  } else {
+    longField.value = "Correct";
+    longField.classList.remove("error");
+    longField.classList.add("success");
+    console.log("LONG - Correct");
+  }
+}
+
+// Attach event listeners to inputs
+document.querySelectorAll(".collar-form-input-text").forEach((input) => {
+  input.addEventListener("input", function () {
+    calculateShortLong();
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  function calculateTotalPerSqFt() {
+    const h20 = document.getElementById("h20");
+    const j62 = document.getElementById("j62");
+    const totalPerSqFt = document.getElementById("total_per_sq_ft");
+
+    if (h20 && j62 && totalPerSqFt) {
+      const h20Value = parseFloat(h20.value) || 0;
+      const j62Value = parseFloat(j62.value) || 0;
+
+      totalPerSqFt.value = h20Value === 1 ? (j62Value + 135).toFixed(2) : "";
+    }
+  }
+
+  function updateInstallCollars() {
+    const h31 = document.getElementById("h31");
+    const installCollarsLabel = document.getElementById(
+      "install_collars_label"
+    );
+    const j12 = document.getElementById("j12");
+    const installCollarsInput = document.getElementById("install_collars");
+
+    if (h31 && installCollarsLabel) {
+      installCollarsLabel.textContent = h31.checked
+        ? "MAKE COLLARS="
+        : "INSTALL COLLARS=";
+    }
+
+    if (j12 && installCollarsInput) {
+      installCollarsInput.value = j12.value.trim() !== "" ? 70 : "";
+    }
+  }
+
+  function updateChaseCover() {
+    const h20 = document.getElementById("h20");
+    const j62 = document.getElementById("j62");
+    const chaseCover = document.getElementById("chase_cover");
+
+    if (h20 && j62 && chaseCover) {
+      const h20Value = parseFloat(h20.value) || 0;
+      const j62Value = parseFloat(j62.value) || 0;
+
+      chaseCover.value = h20Value === 2 ? (j62Value + 200).toFixed(2) : "";
+    }
+  }
+
+  document.getElementById("h20")?.addEventListener("input", () => {
+    calculateTotalPerSqFt();
+    updateChaseCover();
+  });
+  document.getElementById("j62")?.addEventListener("input", () => {
+    calculateTotalPerSqFt();
+    updateChaseCover();
+  });
+
+  document
+    .getElementById("h31")
+    ?.addEventListener("change", updateInstallCollars);
+  document
+    .getElementById("j12")
+    ?.addEventListener("input", updateInstallCollars);
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  function updateThreePieceChaseCover() {
+    const h20 = document.getElementById("h20");
+    const j62 = document.getElementById("j62");
+    const threePieceChaseCover = document.getElementById(
+      "three_piece_chase_cover"
+    );
+
+    if (h20 && j62 && threePieceChaseCover) {
+      const h20Value = parseFloat(h20.value) || 0;
+      const j62Value = parseFloat(j62.value) || 0;
+
+      threePieceChaseCover.value =
+        h20Value === 3 ? (j62Value + 200).toFixed(2) : "";
+    }
+  }
+
+  document
+    .getElementById("h20")
+    ?.addEventListener("input", updateThreePieceChaseCover);
+  document
+    .getElementById("j62")
+    ?.addEventListener("input", updateThreePieceChaseCover);
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  function updateStormCollars() {
+    const c30 = document.getElementById("c30");
+    const stormCollars = document.getElementById("storm_collars");
+
+    if (c30 && stormCollars) {
+      stormCollars.value = c30.checked ? 50 : "";
+    }
+  }
+
+  document
+    .getElementById("c30")
+    ?.addEventListener("change", updateStormCollars);
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  function updateTotalPrePainted() {
+    const h6 = document.getElementById("h6");
+    const j39 = parseFloat(document.getElementById("j39")?.value) || 0;
+    const j40 = parseFloat(document.getElementById("j40")?.value) || 0;
+    const j41 = parseFloat(document.getElementById("j41")?.value) || 0;
+    const j42 = parseFloat(document.getElementById("j42")?.value) || 0;
+    const j43 = parseFloat(document.getElementById("j43")?.value) || 0;
+    const l44 = parseFloat(document.getElementById("l44")?.value) || 0;
+    const totalPrePainted = document.getElementById("total_pre_painted");
+
+    if (h6 && totalPrePainted) {
+      totalPrePainted.value =
+        h6.value !== "STAINLESS STEEL"
+          ? (j39 + j40 + j41 + j42 + j43 + l44).toFixed(2)
+          : "";
+    }
+  }
+
+  document
+    .getElementById("h6")
+    ?.addEventListener("change", updateTotalPrePainted);
+  document
+    .getElementById("j39")
+    ?.addEventListener("input", updateTotalPrePainted);
+  document
+    .getElementById("j40")
+    ?.addEventListener("input", updateTotalPrePainted);
+  document
+    .getElementById("j41")
+    ?.addEventListener("input", updateTotalPrePainted);
+  document
+    .getElementById("j42")
+    ?.addEventListener("input", updateTotalPrePainted);
+  document
+    .getElementById("j43")
+    ?.addEventListener("input", updateTotalPrePainted);
+  document
+    .getElementById("l44")
+    ?.addEventListener("input", updateTotalPrePainted);
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  function updateQuoteTotal() {
+    const j44 = document.getElementById("j44");
+    const j45 = document.getElementById("j45");
+    const quoteTotal = document.getElementById("quote_total");
+
+    if (j44 && j45 && quoteTotal) {
+      const j44Value = j44.value.trim();
+      const j45Value = parseFloat(j45.value) || 0;
+
+      quoteTotal.value = j44Value === "" ? j45Value : j44Value;
+    }
+  }
+
+  document.getElementById("j44")?.addEventListener("input", updateQuoteTotal);
+  document.getElementById("j45")?.addEventListener("input", updateQuoteTotal);
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  function updateSolder() {
+    const h29 = document.getElementById("h29");
+    const solderLabel = document.getElementById("solder_label");
+    const solderAmount = document.getElementById("solder_amount");
+
+    if (h29 && solderLabel && solderAmount) {
+      const h29Value = h29.value.trim();
+      if (h29Value === "N/A") {
+        solderLabel.textContent = "";
+        solderAmount.value = "";
+      } else {
+        solderLabel.textContent = "SOLDER-";
+        solderAmount.value = Math.ceil(parseFloat(h29Value) * 0.5) || "";
+      }
+    }
+  }
+
+  document.getElementById("h29")?.addEventListener("input", updateSolder);
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  function updateMaterial() {
+    const f2 = document.getElementById("f2"); // Checkbox or boolean input
+    const z1 = parseFloat(document.getElementById("z1")?.value) || 0;
+    const y1 = parseFloat(document.getElementById("y1")?.value) || 0;
+    const h62 = parseFloat(document.getElementById("h62")?.value) || 0;
+    const materialAmount = document.getElementById("material_amount");
+
+    if (f2 && materialAmount) {
+      const multiplier = f2.checked ? z1 : y1;
+      materialAmount.value = Math.round(multiplier * h62) || "";
+    }
+  }
+
+  document.getElementById("f2")?.addEventListener("change", updateMaterial);
+  document.getElementById("z1")?.addEventListener("input", updateMaterial);
+  document.getElementById("y1")?.addEventListener("input", updateMaterial);
+  document.getElementById("h62")?.addEventListener("input", updateMaterial);
 });

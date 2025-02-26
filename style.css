@@ -837,7 +837,12 @@ body {
   grid-column: 6;
   grid-row: 5;
 }
+.quote-total {
+  width: 50px;
 
+  grid-column: 1;
+  grid-row: 1;
+}
 .quote-calc-grid input {
   width: 95%;
   border: none;
@@ -848,4 +853,12 @@ body {
 
 .quote-calc-amount {
   font-weight: bold;
+}
+
+.success {
+  color: green;
+}
+
+.error {
+  color: red;
 }
