@@ -862,3 +862,56 @@ body {
 .error {
   color: red;
 }
+
+@media screen and (max-width: 768px) {
+  .invoice-form-row {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+  }
+
+  .invoice-form-label {
+    width: 100%;
+    text-align: left;
+  }
+
+  .invoice-form-input,
+  .invoice-phone-input {
+    width: 100%;
+  }
+
+  .invoice-measurement-container {
+    padding: 0;
+  }
+
+  .invoice-measurement-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .invoice-measurement-label {
+    width: 100%;
+    text-align: left;
+  }
+
+  .rush-section {
+    width: 100%;
+    text-align: center;
+    border-right: none;
+  }
+
+  .rush-header {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .drip-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .checkbox-area {
+    flex-direction: row;
+    gap: 20px;
+  }
+}
