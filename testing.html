@@ -1,0 +1,230 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Storm Collars Form</title>
+    <style>
+      .parent-container {
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+      }
+
+      .quote-calc-grid {
+        display: grid;
+        grid-template-columns: auto auto auto 100px auto auto;
+        max-width: 600px;
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+      }
+
+      .quote-calc-grid > div {
+        border: 1px solid black;
+        padding: 4px 8px;
+        height: 24px;
+        display: flex;
+        align-items: center;
+      }
+
+      .quote-calc-total-sf {
+        grid-column: 4;
+        grid-row: 1;
+        font-weight: bold;
+      }
+
+      .quote-calc-total-sf-input {
+        grid-column: 4;
+        grid-row: 2;
+      }
+
+      .quote-calc-solder {
+        grid-column: 5;
+        grid-row: 1;
+        font-weight: bold;
+      }
+
+      .quote-calc-solder-amount {
+        grid-column: 6;
+        grid-row: 1;
+        justify-content: flex-end;
+      }
+
+      .quote-calc-material {
+        grid-column: 5;
+        grid-row: 2;
+        font-weight: bold;
+      }
+
+      .quote-calc-material-amount {
+        grid-column: 6;
+        grid-row: 2;
+        justify-content: flex-end;
+      }
+
+      .quote-calc-make-time {
+        grid-column: 1;
+        grid-row: 3;
+        font-weight: bold;
+      }
+
+      .quote-calc-value {
+        grid-column: 3;
+        grid-row: 3;
+        color: #00b000;
+        font-weight: bold;
+      }
+
+      .quote-calc-input-field {
+        grid-column: 4;
+        grid-row: 3;
+      }
+
+      .quote-calc-labor {
+        grid-column: 5;
+        grid-row: 3;
+        font-weight: bold;
+      }
+
+      .quote-calc-labor-input {
+        grid-column: 6;
+        grid-row: 3;
+      }
+
+      .quote-calc-quote-total {
+        margin-left: 60px;
+        display: flex;
+        justify-content: flex-end;
+        grid-column: 1 / span 4;
+        grid-row: 5;
+        background-color: yellow;
+        font-weight: bold;
+      }
+
+      .quote-calc-total-input-1 {
+        grid-column: 6;
+        grid-row: 4;
+      }
+
+      .quote-calc-total-2 {
+        grid-column: 5;
+        grid-row: 5;
+        font-weight: bold;
+      }
+
+      .quote-calc-total-input-2 {
+        grid-column: 6;
+        grid-row: 5;
+      }
+      .quote-total {
+        width: 50px;
+
+        grid-column: 1;
+        grid-row: 1;
+      }
+      .quote-calc-grid input {
+        width: 95%;
+        border: none;
+        background: transparent;
+        outline: none;
+        font-size: 14px;
+      }
+
+      .quote-calc-amount {
+        font-weight: bold;
+      }
+       /* All original styles remain untouched */
+
+  @media (max-width: 768px) {
+    .quote-calc-grid {
+      grid-template-columns: 1fr;
+      width: 100%;
+      gap: 0px;
+    }
+
+    .quote-calc-grid > div {
+      grid-column: 1 !important;
+      height: auto;
+      min-height: 32px;
+      padding: 6px 8px;
+    }
+
+    .quote-calc-total-sf { grid-row: 1; }
+    .quote-calc-total-sf-input { grid-row: 2; }
+    .quote-calc-solder { grid-row: 3; }
+    .quote-calc-solder-amount { grid-row: 4; }
+    .quote-calc-material { grid-row: 5; }
+    .quote-calc-material-amount { grid-row: 6; }
+    .quote-calc-make-time { grid-row: 7; }
+    .quote-calc-value { grid-row: 8; }
+    .quote-calc-input-field { grid-row: 9; }
+    .quote-calc-labor { grid-row: 10; }
+    .quote-calc-labor-input { grid-row: 11; }
+    .quote-calc-quote-total {
+      grid-row: 12;
+      margin-left: 0;
+      grid-column: 1 / -1 !important;
+    }
+    .quote-calc-total-input-1 { grid-row: 13; }
+    .quote-calc-total-2 { grid-row: 14; }
+    .quote-calc-total-input-2 { grid-row: 15; }
+
+    .quote-calc-grid input {
+      width: 100%;
+      font-size: 16px;
+    }
+    
+    .parent-container {
+      justify-content: center;
+      padding: 8px;
+    }
+  }
+    </style>
+  </head>
+  <body>
+    <div class="parent-container">
+      <div class="quote-calc-grid">
+        <div class="quote-calc-total-sf">TOTAL S.F.</div>
+        <div class="quote-calc-total-sf-input"><input type="text" /></div>
+        <div class="quote-calc-solder" id="solder_label">SOLDER-</div>
+        <div class="quote-calc-solder-amount">
+          <div class="quote-solder">
+            <input
+              type="text"
+              placeholder="$0.00"
+              id="solder_amount"
+              readonly />
+          </div>
+        </div>
+
+        <div class="quote-calc-material">MATERIAL-</div>
+        <div class="quote-calc-material-amount">
+          <div class="quote-material">
+            <input
+              type="text"
+              id="material_amount"
+              placeholder="$0.00"
+              readonly />
+          </div>
+        </div>
+
+        <div class="quote-calc-make-time">MAKE TIME-</div>
+        <div class="quote-calc-value">#VALUE!</div>
+        <div class="quote-calc-input-field"><input type="text" /></div>
+        <div class="quote-calc-labor">LABOR-</div>
+        <div class="quote-calc-labor-input"><input type="text" /></div>
+
+        <div class="quote-calc-quote-total">
+          QUOTE TOTAL-
+          <div class="quote-total">
+            <input type="text" id="quote_total" readonly />
+          </div>
+        </div>
+        <div class="quote-calc-total-2">TOTAL-</div>
+        <div class="quote-calc-total-input-2"><input type="text" /></div>
+      </div>
+    </div>
+  </body>
+</html>

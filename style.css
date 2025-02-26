@@ -863,55 +863,525 @@ body {
   color: red;
 }
 
-@media screen and (max-width: 768px) {
+/* Mobile Responsive Adjustments */
+@media (max-width: 768px) {
   .invoice-form-row {
     flex-direction: column;
-    align-items: flex-start;
-    padding: 10px;
+    border-bottom-width: 2px;
   }
 
   .invoice-form-label {
     width: 100%;
-    text-align: left;
+    min-width: auto;
+    padding: 8px 8px 0;
+    border-right: none;
   }
 
   .invoice-form-input,
   .invoice-phone-input {
-    width: 100%;
+    padding: 0 8px 8px;
   }
 
   .invoice-measurement-container {
-    padding: 0;
+    padding-left: 0;
   }
 
   .invoice-measurement-row {
     flex-direction: column;
-    align-items: flex-start;
   }
 
   .invoice-measurement-label {
     width: 100%;
     text-align: left;
-  }
-
-  .rush-section {
-    width: 100%;
-    text-align: center;
+    padding: 8px 8px 0;
     border-right: none;
   }
 
-  .rush-header {
+  .form-row {
+    flex-direction: column;
+    border-left: none;
+  }
+
+  .rush-section {
+    margin-top: 10px;
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid black;
+  }
+
+  .drip-section {
+    padding-top: 20px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .drip-label {
+    width: 100%;
+    text-align: left;
+    padding: 0 8px;
+    margin-bottom: 10px;
+  }
+
+  .checkbox-area {
+    width: 100%;
+    justify-content: flex-start;
+    gap: 40px;
+    padding-left: 8px;
+  }
+
+  .yes-no-labels {
+    justify-content: flex-start;
+    gap: 40px;
+    padding: 15px 10px 10px 2px;
+  }
+}
+
+@media (max-width: 768px) {
+  .loose-collars-container {
+    width: 100% !important;
+    margin: 15px 0;
+    padding: 0 10px;
+  }
+
+  .loose-collars-row {
+    flex-direction: column;
+    height: auto;
+    margin-left: 0;
+    padding: 15px 0;
+    border-bottom: 2px solid #000;
+  }
+
+  .loose-collars-label {
+    width: 100% !important;
+    padding: 0 0 10px !important;
+    font-size: 16px !important;
+  }
+
+  .loose-collars-input-area {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 10px;
+  }
+
+  .loose-collars-yes-no-labels {
+    position: relative;
+    top: 0;
+    display: flex !important;
+    justify-content: space-between;
+    width: 100%;
+    gap: 0;
+    padding: 0 15px;
+    font-size: 15px;
+  }
+
+  .loose-collars-checkbox-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 0;
+    padding: 0 15px;
+  }
+
+  .loose-collars-checkbox-yes,
+  .loose-collars-checkbox-no {
+    width: 28px !important;
+    height: 28px !important;
+    margin: 0;
+  }
+
+  /* Vertical alignment for labels and checkboxes */
+  .loose-collars-yes-no-labels span,
+  .loose-collars-checkbox-container {
+    /* width: 28px; */
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .loose-collars-yes-no-labels {
+    font-size: 14px;
+    padding: 0 10px;
+  }
+
+  .loose-collars-checkbox-container {
+    padding: 0 10px;
+  }
+
+  .loose-collars-checkbox-yes,
+  .loose-collars-checkbox-no {
+    width: 24px !important;
+    height: 24px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .image-form-container {
+    width: 100% !important;
+    padding: 0 10px;
+  }
+
+  .image-title {
+    font-size: 16px !important;
+    padding: 4px !important;
+    margin: 0 10px 10px !important;
+    display: block !important;
+  }
+
+  .image-logo {
+    max-width: 280px !important;
+    margin: 5px auto !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .image-form-container-2 {
+    width: 100% !important;
+    padding: 0 10px;
+  }
+
+  .image-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .image {
+    max-width: 100% !important;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+/* Add this at the end of existing styles */
+@media (max-width: 768px) {
+  .storm-form-container {
+    width: 100% !important;
+    padding: 0 10px;
+  }
+
+  .storm-form-row {
+    flex-direction: column;
+    height: auto;
+    padding: 15px 0;
+  }
+
+  .storm-label {
+    width: 100% !important;
+    text-align: left !important;
+    margin: 0 0 10px !important;
+    padding: 0 10px !important;
+    font-size: 16px !important;
+  }
+
+  .storm-input-area {
+    padding: 10px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .storm-yes-no-labels {
+    position: relative;
+    top: 0;
+    display: flex !important;
+    justify-content: center;
+    gap: 100px;
+    order: 1;
+  }
+
+  .storm-checkbox-container {
+    order: 2;
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    padding-top: 5px;
+  }
+
+  .storm-checkbox-yes,
+  .storm-checkbox-no {
+    width: 30px !important;
+    height: 30px !important;
+  }
+
+  .storm-form-form-input-text {
+    font-size: 14px !important;
+    padding: 10px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .storm-yes-no-labels {
+    gap: 60px !important;
+  }
+
+  .storm-checkbox-container {
+    gap: 60px !important;
+  }
+
+  .storm-checkbox-yes,
+  .storm-checkbox-no {
+    width: 25px !important;
+    height: 25px !important;
+  }
+}
+
+/* Add this at the end of existing styles */
+@media (max-width: 768px) {
+  .collar-form-container {
+    width: 100% !important;
+    margin: 10px 0 !important;
+  }
+
+  .collar-form-row {
+    flex-direction: column !important;
+    min-height: auto !important;
+  }
+
+  .collar-form-label {
+    padding: 8px 10px !important;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .collar-form-input {
+    padding: 8px 10px !important;
+  }
+
+  .collar-location-container {
+    margin: 10px 0 !important;
+  }
+
+  .collar-short-long-row {
+    flex-direction: column !important;
+  }
+
+  .collar-short-long-cell {
+    border-right: none !important;
+    border-bottom: 1px solid black;
+    padding: 8px 10px !important;
+  }
+
+  .collar-short-long-input-SHORT {
+    border-right: none !important;
+    border-bottom: 1px solid black;
+    padding: 8px 10px !important;
+  }
+
+  .collar-short-long-input-LONG {
+    border-top: none !important;
+    padding: 8px 10px !important;
+  }
+
+  .collar-section-header {
+    padding: 10px !important;
+  }
+}
+
+/* Existing styles remain untouched */
+
+@media (max-width: 768px) {
+  .parent-container {
+    justify-content: flex-start;
+  }
+
+  .custom-form-container-x7y9z {
     width: 100%;
     padding: 10px;
   }
 
-  .drip-section {
-    flex-direction: column;
+  .custom-form-table-x7y9z {
+    font-size: 14px;
+  }
+
+  .custom-form-label-cell-x7y9z {
+    white-space: normal;
+    padding: 4px 6px !important;
+  }
+
+  .custom-form-input-cell-x7y9z {
+    width: auto;
+  }
+
+  .custom-form-table-x7y9z td {
+    height: auto;
+    min-height: 28px;
+    padding: 4px 6px;
+  }
+
+  .custom-form-input-cell-x7y9z input {
+    padding: 4px 6px;
+  }
+}
+
+@media (max-width: 768px) {
+  .quote-calc-grid {
+    grid-template-columns: 1fr;
+    width: 100%;
+    gap: 0px;
+  }
+
+  .quote-calc-grid > div {
+    grid-column: 1 !important;
+    height: auto;
+    min-height: 32px;
+    padding: 6px 8px;
+  }
+
+  .quote-calc-total-sf {
+    grid-row: 1;
+  }
+  .quote-calc-total-sf-input {
+    grid-row: 2;
+  }
+  .quote-calc-solder {
+    grid-row: 3;
+  }
+  .quote-calc-solder-amount {
+    grid-row: 4;
+  }
+  .quote-calc-material {
+    grid-row: 5;
+  }
+  .quote-calc-material-amount {
+    grid-row: 6;
+  }
+  .quote-calc-make-time {
+    grid-row: 7;
+  }
+  .quote-calc-value {
+    grid-row: 8;
+  }
+  .quote-calc-input-field {
+    grid-row: 9;
+  }
+  .quote-calc-labor {
+    grid-row: 10;
+  }
+  .quote-calc-labor-input {
+    grid-row: 11;
+  }
+  .quote-calc-quote-total {
+    grid-row: 12;
+    margin-left: 0;
+    grid-column: 1 / -1 !important;
+  }
+  .quote-calc-total-input-1 {
+    grid-row: 13;
+  }
+  .quote-calc-total-2 {
+    grid-row: 14;
+  }
+  .quote-calc-total-input-2 {
+    grid-row: 15;
+  }
+
+  .quote-calc-grid input {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  .parent-container {
+    justify-content: center;
+    padding: 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  .form-container {
+    width: 100% !important;
+    border-width: 2px !important;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .sections-row,
+  .stock-row,
+  .row {
+    flex-direction: column !important;
+    height: auto !important;
+    margin: 0;
+  }
+
+  .section-label,
+  .section-cell,
+  .stock-label,
+  .number-cell,
+  .solder-cell,
+  .total-cost-cell {
+    width: 100% !important;
+    border-right: none !important;
+    border-bottom: 1px solid #000000 !important;
+    padding: 12px 15px !important;
+    text-align: left !important;
+    box-sizing: border-box;
+  }
+
+  .section-label {
+    background: #f8f9fa;
+    font-weight: 600;
+    border-bottom: 2px solid #000 !important;
+  }
+
+  .x-mark,
+  .empty-cell {
+    width: 100% !important;
+    padding: 12px 15px !important;
+  }
+
+  .total-sq-cell,
+  .total-sq-cell-1 {
+    padding: 12px 15px !important;
+    background: #f8f8f8;
+  }
+
+  .yellow-row,
+  .pink-row,
+  .white-row {
+    height: auto !important;
+    padding: 12px 15px !important;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .form-input-text {
+    font-size: 15px !important;
+    padding: 10px 12px !important;
+    border-radius: 3px;
+    transition: all 0.2s ease;
+  }
+
+  .form-input-text:focus {
+    outline: 2px solid rgba(0, 98, 255, 0.2);
+  }
+
+  .header {
+    padding: 14px !important;
+    font-size: 17px !important;
+    letter-spacing: 0.3px;
+    border-bottom: 2px solid #000;
+  }
+
+  .stock-label {
+    text-align: left !important;
+    font-weight: 500;
+    padding-right: 15px !important;
+  }
+
+  /* Enhanced input styling */
+
+  .x-mark input {
+    font-weight: 600;
+    font-size: 1.1em;
     text-align: center;
   }
 
-  .checkbox-area {
-    flex-direction: row;
-    gap: 20px;
+  .total-cost-cell {
+    font-weight: 600;
+  }
+
+  .yellow-cell {
+    background-color: #ffff00 !important;
+    padding: 12px 15px !important;
   }
 }
