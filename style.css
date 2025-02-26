@@ -731,3 +731,121 @@ body {
   justify-content: flex-end;
   width: 100%;
 }
+
+.quote-calc-grid {
+  display: grid;
+  grid-template-columns: auto auto auto 100px auto auto;
+  max-width: 600px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+}
+
+.quote-calc-grid > div {
+  border: 1px solid black;
+  padding: 4px 8px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+}
+
+.quote-calc-total-sf {
+  grid-column: 4;
+  grid-row: 1;
+  font-weight: bold;
+}
+
+.quote-calc-total-sf-input {
+  grid-column: 4;
+  grid-row: 2;
+}
+
+.quote-calc-solder {
+  grid-column: 5;
+  grid-row: 1;
+  font-weight: bold;
+}
+
+.quote-calc-solder-amount {
+  grid-column: 6;
+  grid-row: 1;
+  justify-content: flex-end;
+}
+
+.quote-calc-material {
+  grid-column: 5;
+  grid-row: 2;
+  font-weight: bold;
+}
+
+.quote-calc-material-amount {
+  grid-column: 6;
+  grid-row: 2;
+  justify-content: flex-end;
+}
+
+.quote-calc-make-time {
+  grid-column: 1;
+  grid-row: 3;
+  font-weight: bold;
+}
+
+.quote-calc-value {
+  grid-column: 3;
+  grid-row: 3;
+  color: #00b000;
+  font-weight: bold;
+}
+
+.quote-calc-input-field {
+  grid-column: 4;
+  grid-row: 3;
+}
+
+.quote-calc-labor {
+  grid-column: 5;
+  grid-row: 3;
+  font-weight: bold;
+}
+
+.quote-calc-labor-input {
+  grid-column: 6;
+  grid-row: 3;
+}
+
+.quote-calc-quote-total {
+  margin-left: 60px;
+  display: flex;
+  justify-content: flex-end;
+  grid-column: 1 / span 4;
+  grid-row: 5;
+  background-color: yellow;
+  font-weight: bold;
+}
+
+.quote-calc-total-input-1 {
+  grid-column: 6;
+  grid-row: 4;
+}
+
+.quote-calc-total-2 {
+  grid-column: 5;
+  grid-row: 5;
+  font-weight: bold;
+}
+
+.quote-calc-total-input-2 {
+  grid-column: 6;
+  grid-row: 5;
+}
+
+.quote-calc-grid input {
+  width: 95%;
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 14px;
+}
+
+.quote-calc-amount {
+  font-weight: bold;
+}
